@@ -1,21 +1,20 @@
-/////,,,,,,,,,,,,,,,,,best code 
 import React, { useState, useEffect } from 'react';
-// import './AddBooking.css';
-// import './BookRoom.css';
+import './BookRoom.css';
+// import bookform4 from '../assets/bookform4.svg';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { format, differenceInDays, eachDayOfInterval, isWithinInterval } from 'date-fns';
 import Swal from "sweetalert2";
+import { format, differenceInDays, eachDayOfInterval, isWithinInterval } from 'date-fns';
 
 const BookingForm = ({ onAddCustomer = () => {} }) => {
     const [customerName, setCustomerName] = useState('');
     const [mobileNumber, setMobileNumber] = useState('');
     const [checkInDate, setCheckInDate] = useState(new Date());
     const [checkOutDate, setCheckOutDate] = useState(new Date());
-    const [userType, setUserType] = useState('Non-Government');
+    const [userType, setUserType] = useState('General');
     const [location, setLocation] = useState('Dantewada');
     const [numberOfGuests, setNumberOfGuests] = useState(1);
-    const [numberOfRooms, setNumberOfRooms] = useState(1);
+    // const [numberOfRooms, setNumberOfRooms] = useState(1);
     const [numberOfDays, setNumberOfDays] = useState(1);
     const [isLoading, setIsLoading] = useState(false);
     const [roomsData, setRoomsData] = useState([]);
@@ -29,6 +28,7 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
 
     const locationRoomLimits = {
         "Dantewada": 6,
+        "Kirandul": 4,
         "Geedam": 2,
         "Barsur": 2
     };
@@ -47,7 +47,7 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
 
     const fetchRooms = async () => {
         try {
-            const res = await fetch("https://script.google.com/macros/s/AKfycbwRWOxc83WAWuSJrxs-Hc7PV5OOTakx5i-72HMpnqPyWeGRZoWfKsZlHABaJAFAt3l_/exec");
+            const res = await fetch("https://script.google.com/macros/s/AKfycbxEBL7mAh7-bfdR3S3GiJbuYtHcbAswiTFbhIgaqLKpFnXzif-htHgoZRJ8bD2tnD7c/exec");
             const data = await res.json();
             if (data.rooms) {
                 setRoomsData(data.rooms);
@@ -117,7 +117,8 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
             return;
         }
 
-        const { isAvailable, availableRooms } = checkRoomAvailability(location, checkInDate, checkOutDate, numberOfRooms);
+        // const { isAvailable, availableRooms } = checkRoomAvailability(location, checkInDate, checkOutDate, numberOfRooms);
+        const { isAvailable, availableRooms } = checkRoomAvailability(location, checkInDate, checkOutDate);
 
         if (!isAvailable) {
             Swal.fire({
@@ -142,14 +143,14 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
             moNo: mobileNumber,
             location: location,
             customerType: userType,
-            noOffRoom: numberOfRooms,
+            // noOffRoom: numberOfRooms,
             totalGuest: numberOfGuests,
             totalDays: numberOfDays,
         };
 
         try {
-            await fetch('https://script.google.com/macros/s/AKfycbzAES6vIe7PRtls0bQfLxBclgoekMfxPEJpyl6yac1t3W9lIg-BapBvojd_HDEd35pR/exec', {
-            // await fetch('https://script.google.com/macros/s/AKfycbx_LevUCkFXdrs3Z8BSuWaKSykEa7VS9v9VQprcMhoheMQGPX2o95UOe_Ld_QsXmm-5/exec', {
+            await fetch('https://script.google.com/macros/s/AKfycbxEBL7mAh7-bfdR3S3GiJbuYtHcbAswiTFbhIgaqLKpFnXzif-htHgoZRJ8bD2tnD7c/exec', {
+            //https://script.google.com/macros/s/AKfycbxEBL7mAh7-bfdR3S3GiJbuYtHcbAswiTFbhIgaqLKpFnXzif-htHgoZRJ8bD2tnD7c/exec
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -177,24 +178,28 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
         setMobileNumber('');
         setCheckInDate(new Date());
         setCheckOutDate(new Date());
-        setUserType('Non-Government');
+        setUserType('General');
         setLocation('Dantewada');
         setNumberOfGuests(1);
-        setNumberOfRooms(1);
+        // setNumberOfRooms(1);
         setNumberOfDays(1);
     };
 
     return (
+        // <div className="add-booking-container" style={{border:"1px solid blue", margin:"10px", justifyContent:"center"}}>
         <div className="add-booking-container">
-            <div className="book-room-form">
-                <h2 className='add-booking-title'>Plan Your Stay With Us</h2>
+            {/* <div style={{
+    background: `url(${bookform4})`,
+    backgroundSize: "cover"}} /> */}
+            <div className="book-room-form" style={{display:"flex", flexDirection: "column", justifyContent:"center",alignItems:"center", marginBottom:"5px"}}>
+                <h2 className='add-booking-title'>Plan Your HomeStay With Us</h2>
                 <form className="add-booking-form" onSubmit={checkAvailabilityAndSubmit}>
                     <table className="add-booking-table">
                         <tbody>
                             {/* Form fields here, similar to your original form */}
                             <tr>
                                 <td><label htmlFor="customerName" className="add-booking-label">Customer Name:</label></td>
-                                <td><input type="text" id="customerName" value={customerName} onChange={handleNameChange} minLength={3} required className="add-booking-input" /></td>
+                                <td><input type="text" id="customerName" value={customerName} onChange={handleNameChange} minLength={3} required className="add-booking-input" style={{hover:"blue"}} /></td>
                             </tr>
                             <tr>
                                 <td><label htmlFor="phoneNumber" className="add-booking-label">Phone Number:</label></td>
@@ -232,15 +237,16 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
                                 <td><label className="add-booking-label">Number of Guests:</label></td>
                                 <td><input type="number" value={numberOfGuests} onChange={(e) => setNumberOfGuests(e.target.value)} required className="add-booking-input" min="1" /></td>
                             </tr>
-                            <tr>
+                            {/* <tr>
                                 <td><label className="add-booking-label">Number of Rooms:</label></td>
                                 <td><input type="number" value={numberOfRooms} onChange={(e) => setNumberOfRooms(e.target.value)} required className="add-booking-input" min="1" /></td>
-                            </tr>
+                            </tr> */}
                             <tr>
                                 <td><label className="add-booking-label">Location:</label></td>
                                 <td>
                                     <select value={location} onChange={(e) => setLocation(e.target.value)} className="add-booking-input">
                                         <option value="Dantewada">Dantewada</option>
+                                        <option value="Kirandul">Kirandul</option>
                                         <option value="Geedam">Geedam</option>
                                         <option value="Barsur">Barsur</option>
                                     </select>
@@ -249,15 +255,15 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
                             <tr>
                                 <td><label className="add-booking-label">User Room Type:</label></td>
                                 <td>
-                                    <select value={userType} onChange={(e) => setUserType(e.target.value)} className="add-booking-input">
-                                        <option value="Non-Government">General</option>
-                                        <option value="Government">Special</option>
+                                    <select value={userType} onChange={(e) => setUserType(e.target.value)} className="add-booking-input" style={{left:"50px"}} >
+                                        <option value="General">General</option>
+                                        <option value="Special">Special</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
                                 <td colSpan="2">
-                                    <button type="submit" disabled={isLoading} className="add-booking-submit-btn">
+                                    <button type="submit" disabled={isLoading} className="add-booking-submit-btn add-booking-button">
                                         {isLoading ? 'Loading...' : 'Book Now'}
                                     </button>
                                 </td>
