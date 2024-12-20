@@ -10,10 +10,10 @@ import Navbar from "./Components/Navbar";
 const App = () => {
   return (
     <>
-      <Navbar />
       <Router>
+        <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
           <Route path="/listings" element={<ListingsPage />} />
           <Route path="/details/:id" element={<DetailsPage />} />
           <Route path="/book" element={<BookingForm />} />
