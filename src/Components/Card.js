@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import room from "../assets/room.jpg"
 import DetailsPage from "./DetailsPage";
 
@@ -7,7 +7,7 @@ function Card() {
     return (
         <>
             <div className="card my-3" style={{ width: 18 + "rem" }}>
-                <img src={room} className="card-img-top" alt="No image" />
+                <img src={room} className="card-img-top" alt="No Cover" />
                 <div className="card-body">
                     <h5 className="card-title">Hotel Malabar</h5>
                     <p className="card-text">Description: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
