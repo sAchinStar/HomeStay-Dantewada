@@ -1,15 +1,35 @@
-import React, { useEffect, useState } from "react";
-import { fetchHomestays } from "../api";
+// import React, { useEffect, useState } from "react";
+import Card from "./Card";
+// import { Link } from "react-router-dom";
+// import { fetchHomestays } from "../api";
 
 const ListingsPage = () => {
-  const [homestays, setHomestays] = useState([]);
+  // const [homestays, setHomestays] = useState([]);
 
-  useEffect(() => {
-    fetchHomestays().then(data => setHomestays(data));
-  }, []);
+  // useEffect(() => {
+  //   fetchHomestays().then(data => setHomestays(data));
+  // }, []);
 
   return (
-    <div>
+    <div className="container d-flex justify-content-evenly flex-wrap">
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+    </div>
+  );
+  {/*<div>
       <h1>Homestays</h1>
       <div>
         {homestays.map((homestay) => (
@@ -21,8 +41,8 @@ const ListingsPage = () => {
           </div>
         ))}
       </div>
-    </div>
-  );
+    </div>*/}
+  // );
 };
 
 export default ListingsPage;
