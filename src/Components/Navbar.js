@@ -24,7 +24,7 @@ function Navbar() {
                             <Link class="nav-link" to="/contact">Contact</Link>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {/* <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Dropdown
                             </a>
                             <ul class="dropdown-menu">
@@ -32,10 +32,10 @@ function Navbar() {
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li><hr class="dropdown-divider"/></li>
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+                            </ul> */}
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                            {/* <a class="nav-link disabled" aria-disabled="true">Disabled</a> */}
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
