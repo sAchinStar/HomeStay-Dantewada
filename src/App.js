@@ -6,18 +6,21 @@ import DetailsPage from "./Components/DetailsPage";
 import BookingForm from "./Components/BookingForm";
 import ContactPage from "./Components/ContactPage";
 import Navbar from "./Components/Navbar";
+import TodayBooking from "./Components/TodayBooking";
 
 const App = () => {
   return (
     <>
       <Router>
-        <Navbar />
+      <Navbar />
         <Routes>
           <Route path="/home" element={<HomePage />} />
           <Route path="/listings" element={<ListingsPage />} />
           <Route path="/details/:id" element={<DetailsPage />} />
           <Route path="/book" element={<BookingForm />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/bookingfrom" element={<BookingForm />} />
+          <Route path="/todaybooking" element={<TodayBooking />} />
         </Routes>
       </Router>
     </>
