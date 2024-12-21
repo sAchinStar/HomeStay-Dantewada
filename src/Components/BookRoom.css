@@ -31,7 +31,7 @@ h1, h2, h3 {
   padding: 20px;
   border: solid thin whitesmoke;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(190, 172, 172, 0.9);
+  box-shadow: 0 4px 8px rgba(251, 248, 248, 0.9);
   /* background-color: rgba(223, 235, 234, 0.5); */
   z-index: 2;
 }
