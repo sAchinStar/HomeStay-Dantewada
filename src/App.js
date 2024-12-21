@@ -7,6 +7,7 @@ import BookingForm from "./Components/BookingForm";
 import ContactPage from "./Components/ContactPage";
 import Navbar from "./Components/Navbar";
 import TodayBooking from "./Components/TodayBooking";
+import Footer from "./Components/Footer";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/bookingfrom" element={<BookingForm />} />
           <Route path="/todaybooking" element={<TodayBooking />} />
         </Routes>
+        <Footer />
       </Router>
     </>
   );
