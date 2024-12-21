@@ -14,6 +14,7 @@ const Footer = () => {
             <li>Name: Sachin kumar, Yash sahu, Somda </li>
             <li>Post/designation :Searvice Officer's  (Protocol Officer)</li>
             <li>Mobile number : +91 6260012978, +91 6265490184</li>
+            <li>Email: support@dantewada-tourism.com</li>
             {/* <li>Email: admin@example.com</li> */}
           </ul>
         </div>
