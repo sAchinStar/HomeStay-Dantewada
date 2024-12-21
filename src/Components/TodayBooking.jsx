@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import "../Components/TodayBooking.css";
 import Spinner from '../Components/Spin'; 
-const TodayBooking = () => {
+const TodayBooking = ({ AddCustomer = () => {} }) => {
     const [customers, setCustomers] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
@@ -91,10 +91,12 @@ const TodayBooking = () => {
         filterCustomers(customers, query, searchDate, selectedLocation);
     };
 
-    const handleSearchDateChange = (date) => {
-        setSearchDate(date);
-        filterCustomers(customers, searchQuery, date, selectedLocation);
-    };
+    // const handleSearchDateChange = (date) => {
+        // setSearchDate(date);
+        setSearchDate();
+        // filterCustomers(customers, searchQuery, date, selectedLocation);
+        filterCustomers(customers, searchQuery,  selectedLocation);
+    // };
 
     const updateBookingStatus = async (id, status) => {
         if(status === "Accepted"){
@@ -105,7 +107,7 @@ const TodayBooking = () => {
         setLoadingRowId(id);
 
         try {
-            const response = await fetch(`${API_BASE_URL}?action=update`, {
+             await fetch(`${API_BASE_URL}?action=update`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
