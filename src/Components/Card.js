@@ -1,5 +1,5 @@
 // import { Link } from "react-router-dom";
-import room from "../assets/room.jpg"
+import room from "../Assets/room.jpg"
 import DetailsPage from "./DetailsPage";
 
 
