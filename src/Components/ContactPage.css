@@ -1,0 +1,172 @@
+.contact_header {
+    text-align: center;
+    font-size: 4vw; 
+    font-weight: bold;
+    margin-top: 6vh; 
+    color: #333;
+    animation: fadeInHeader 1.5s ease-out;
+}
+
+.message {
+    resize: none;
+    display: block;
+}
+
+#contact_h2 {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.contact_container {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: stretch; 
+    padding: 0; 
+    width: 100%;
+    max-width: 600px; 
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.contact_left {
+    width: 35%; 
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    animation: slideInFromLeft 1.2s 0.5s forwards ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.contact_left img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact_right {
+    width: 65%; 
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    animation: slideInFromRight 1.2s 0.5s forwards ease-out;
+}
+
+.contact_right h2 {
+    font-size: 1.8vw; 
+    margin-bottom: 1.2vh;
+    color: #444;
+}
+
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh; 
+}
+
+#contact_label,
+.submit,
+#contact_h2 {
+    margin: 0 1vw;
+}
+
+.contact_mail,
+.contact_name,
+.message {
+    padding: 1vh 1vw;
+    margin: 0.8vh; 
+    font-size: 1    vw; 
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    display: block;
+}
+
+.contact_mail:focus,
+.contact_name:focus,
+.message:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+.submit {
+    padding: 1vh 0; 
+    font-size: 1.3vw; 
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.contact_last {
+    text-align: center;
+    margin-top: 5vh;
+    color: #555;
+    animation: fadeInText  1.5s forwards ease-out;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeInHeader {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInContainer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

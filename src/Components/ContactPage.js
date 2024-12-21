@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./ContactPage.css";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -19,40 +20,70 @@ const ContactPage = () => {
   };
 
   return (
-    <div>
-      <h1>Contact Us</h1>
-      <p>If you have any questions, feel free to reach out to us:</p>
-      <p>Email: support@dantewada-tourism.com</p>
-      <p>Phone: +91-123-456-7890</p>
+    <>
+      <header className="contact_header">Contact Us</header>
+
+    <div className="contact_container">
+
+    <div className="contact_left">
+      <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/silhouette-of-a-guy-with-a-cap-at-red-sky-sunset-free-image.jpeg?h=800&quality=80" alt="" />
+    </div>
+
+
+      <div className="contact_right">
 
       <h2>Send Us a Message</h2>
+
       <form onSubmit={handleSubmit}>
+        
+        <label htmlFor="name">Enter Name: </label>
         <input
+          className="name"
           name="name"
+          id="name"
           type="text"
           placeholder="Your Name"
           value={formData.name}
           onChange={handleChange}
           required
         />
+
+        <label htmlFor="email">Enter e-mail: </label>
         <input
-          name="email"
-          type="email"
+        className="e-mail"
+        name="email"
+        id="email"
+        type="email"
           placeholder="Your Email"
           value={formData.email}
           onChange={handleChange}
           required
         />
+
+        <label htmlFor="message">Message</label>
         <textarea
+        className="message"
           name="message"
+          id="message"
           placeholder="Your Message"
           value={formData.message}
           onChange={handleChange}
           required
         ></textarea>
-        <button type="submit">Submit</button>
+        <button type="submit"className="submit">Submit</button>
       </form>
+        
+
     </div>
+
+          </div>
+
+      <div className="contact_last">
+      <p>If you have any questions, feel free to reach out to us:<br/>
+      Email: support@dantewada-tourism.com<br/>
+      Phone: +91-123-456-7890</p>
+      </div>
+    </>
   );
 };
 
