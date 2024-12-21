@@ -7,12 +7,14 @@ import BookingForm from "./Components/BookingForm";
 import ContactPage from "./Components/ContactPage";
 import Navbar from "./Components/Navbar";
 import TodayBooking from "./Components/TodayBooking";
+import Sidebar from "./Components/Sidebar";
 
 const App = () => {
   return (
     <>
       <Router>
       <Navbar />
+      <div className="container d-flex ">
         <Routes>
           <Route path="/home" element={<HomePage />} />
           <Route path="/listings" element={<ListingsPage />} />
@@ -21,7 +23,10 @@ const App = () => {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/bookingfrom" element={<BookingForm />} />
           <Route path="/todaybooking" element={<TodayBooking />} />
+          {/* <Route path="/sidebar" element={<Sidebar/>} /> */}
         </Routes>
+      <Sidebar/>
+      </div>
       </Router>
     </>
   );

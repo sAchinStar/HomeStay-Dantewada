@@ -191,6 +191,11 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
             {/* <div style={{
     background: `url(${bookform4})`,
     backgroundSize: "cover"}} /> */}
+
+<div className="add-booking-flex">
+                <div className="image-container">
+                    <img src="/bookform4.svg" alt="Room Booking" className="booking-image" />
+                </div>
             <div className="book-room-form" style={{display:"flex", flexDirection: "column", justifyContent:"center",alignItems:"center", marginBottom:"5px"}}>
                 <h2 className='add-booking-title'>Plan Your HomeStay With Us</h2>
                 <form className="add-booking-form" onSubmit={checkAvailabilityAndSubmit}>
@@ -272,6 +277,7 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
                     </table>
                 </form>
             </div>
+            </div>
         </div>
     );
 };
@@ -326,43 +332,191 @@ export default BookingForm;
 
 
 
-// import React, { useState } from "react";
-// import { submitBooking } from "../api";
+// // // import React, { useState } from "react";
+// // // import { submitBooking } from "../api";
 
-// const BookingForm = () => {
-//   const [formData, setFormData] = useState({
-//     name: "",
-//     email: "",
-//     contact: "",
-//     checkIn: "",
-//     checkOut: "",
-//     guests: 1,
-//   });
+// // // const BookingForm = () => {
+// // //   const [formData, setFormData] = useState({
+// // //     name: "",
+// // //     email: "",
+// // //     contact: "",
+// // //     checkIn: "",
+// // //     checkOut: "",
+// // //     guests: 1,
+// // //   });
 
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     const response = await submitBooking(formData);
-//     if (response.success) {
-//       alert("Booking Successful!");
-//     }
-//   };
+// // //   const handleSubmit = async (e) => {
+// // //     e.preventDefault();
+// // //     const response = await submitBooking(formData);
+// // //     if (response.success) {
+// // //       alert("Booking Successful!");
+// // //     }
+// // //   };
 
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData({ ...formData, [name]: value });
-//   };
+// // //   const handleChange = (e) => {
+// // //     const { name, value } = e.target;
+// // //     setFormData({ ...formData, [name]: value });
+// // //   };
 
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       <input name="name" placeholder="Name" onChange={handleChange} required />
-//       <input name="email" placeholder="Email" onChange={handleChange} required />
-//       <input name="contact" placeholder="Contact" onChange={handleChange} required />
-//       <input name="checkIn" type="date" onChange={handleChange} required />
-//       <input name="checkOut" type="date" onChange={handleChange} required />
-//       <input name="guests" type="number" onChange={handleChange} required />
-//       <button type="submit">Book Now</button>
-//     </form>
-//   );
+// // //   return (
+// // //     <form onSubmit={handleSubmit}>
+// // //       <input name="name" placeholder="Name" onChange={handleChange} required />
+// // //       <input name="email" placeholder="Email" onChange={handleChange} required />
+// // //       <input name="contact" placeholder="Contact" onChange={handleChange} required />
+// // //       <input name="checkIn" type="date" onChange={handleChange} required />
+// // //       <input name="checkOut" type="date" onChange={handleChange} required />
+// // //       <input name="guests" type="number" onChange={handleChange} required />
+// // //       <button type="submit">Book Now</button>
+// // //     </form>
+// // //   );
+// // // };
+
+// // // export default BookingForm;
+
+
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import './BookRoom.css';
+// import DatePicker from 'react-datepicker';
+// import 'react-datepicker/dist/react-datepicker.css';
+// import Swal from "sweetalert2";
+// import { format, differenceInDays, eachDayOfInterval, isWithinInterval } from 'date-fns';
+
+// const BookingForm = ({ onAddCustomer = () => {} }) => {
+//     const [customerName, setCustomerName] = useState('');
+//     const [mobileNumber, setMobileNumber] = useState('');
+//     const [checkInDate, setCheckInDate] = useState(new Date());
+//     const [checkOutDate, setCheckOutDate] = useState(new Date());
+//     const [userType, setUserType] = useState('General');
+//     const [location, setLocation] = useState('Dantewada');
+//     const [numberOfGuests, setNumberOfGuests] = useState(1);
+//     const [numberOfDays, setNumberOfDays] = useState(1);
+//     const [isLoading, setIsLoading] = useState(false);
+
+//     useEffect(() => {
+//         if (checkOutDate >= checkInDate) {
+//             setNumberOfDays(differenceInDays(checkOutDate, checkInDate) + 1);
+//         } else {
+//             setNumberOfDays(1);
+//         }
+//     }, [checkInDate, checkOutDate]);
+
+//     const handleNameChange = (e) => {
+//         const regex = /^[A-Za-z\s]*$/;
+//         if (regex.test(e.target.value)) {
+//             setCustomerName(e.target.value);
+//         }
+//     };
+
+//     const handlePhoneNumberChange = (e) => {
+//         const regex = /^[0-9]*$/;
+//         const value = e.target.value;
+
+//         if (regex.test(value) && value.length <= 10) {
+//             setMobileNumber(value);
+//         } else {
+//             alert("Please enter a valid mobile number");
+//         }
+//     };
+
+//     const checkAvailabilityAndSubmit = async (e) => {
+//         e.preventDefault();
+//         setIsLoading(true);
+
+//         if (checkOutDate < checkInDate) {
+//             alert('Check-out date must be after the check-in date.');
+//             setIsLoading(false);
+//             return;
+//         }
+
+//         Swal.fire({
+//             title: "Booking Submitted Successfully!",
+//             icon: "success",
+//             confirmButtonText: "OK"
+//         });
+
+//         onAddCustomer({
+//             id: new Date().getTime(),
+//             checkInTime: format(checkInDate, 'dd/MM/yyyy'),
+//             checkOutTime: format(checkOutDate, 'dd/MM/yyyy'),
+//             fullName: customerName,
+//             moNo: mobileNumber,
+//             location: location,
+//             customerType: userType,
+//             totalGuest: numberOfGuests,
+//             totalDays: numberOfDays,
+//         });
+
+//         setCustomerName('');
+//         setMobileNumber('');
+//         setCheckInDate(new Date());
+//         setCheckOutDate(new Date());
+//         setUserType('General');
+//         setLocation('Dantewada');
+//         setNumberOfGuests(1);
+//         setNumberOfDays(1);
+//         setIsLoading(false);
+//     };
+
+//     return (
+//         <div className="add-booking-container">
+//             <div className="add-booking-flex">
+//                 <div className="image-container">
+//                     <img src="/public/bookform4.svg" alt="Room Booking" className="booking-image" />
+//                 </div>
+//                 <div className="book-room-form">
+//                     <h2 className="add-booking-title">Plan Your HomeStay With Us</h2>
+//                     <form className="add-booking-form" onSubmit={checkAvailabilityAndSubmit}>
+//                         <table className="add-booking-table">
+//                             <tbody>
+//                                 <tr>
+//                                     <td><label htmlFor="customerName" className="add-booking-label">Customer Name:</label></td>
+//                                     <td><input type="text" id="customerName" value={customerName} onChange={handleNameChange} required className="add-booking-input" /></td>
+//                                 </tr>
+//                                 <tr>
+//                                     <td><label htmlFor="phoneNumber" className="add-booking-label">Phone Number:</label></td>
+//                                     <td><input type="tel" id="phoneNumber" value={mobileNumber} onChange={handlePhoneNumberChange} required className="add-booking-input" /></td>
+//                                 </tr>
+//                                 <tr>
+//                                     <td><label htmlFor="checkIn" className="add-booking-label">Check-In Date:</label></td>
+//                                     <td>
+//                                         <DatePicker
+//                                             selected={checkInDate}
+//                                             onChange={(date) => setCheckInDate(date)}
+//                                             dateFormat="dd/MM/yyyy"
+//                                             className="add-booking-input"
+//                                             required
+//                                         />
+//                                     </td>
+//                                 </tr>
+//                                 <tr>
+//                                     <td><label htmlFor="checkOut" className="add-booking-label">Check-Out Date:</label></td>
+//                                     <td>
+//                                         <DatePicker
+//                                             selected={checkOutDate}
+//                                             onChange={(date) => setCheckOutDate(date)}
+//                                             dateFormat="dd/MM/yyyy"
+//                                             className="add-booking-input"
+//                                             required
+//                                         />
+//                                     </td>
+//                                 </tr>
+//                                 <tr>
+//                                     <td colSpan="2">
+//                                         <button type="submit" disabled={isLoading} className="add-booking-btn">
+//                                             {isLoading ? "Booking..." : "Submit Booking"}
+//                                         </button>
+//                                     </td>
+//                                 </tr>
+//                             </tbody>
+//                         </table>
+//                     </form>
+//                 </div>
+//             </div>
+//         </div>
+//     );
 // };
 
 // export default BookingForm;
