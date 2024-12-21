@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Components/ContactPage.css";
+import "./ContactPage.css";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -26,19 +26,19 @@ const ContactPage = () => {
     <div className="contact_container">
 
     <div className="contact_left">
-      <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/silhouette-of-a-guy-with-a-cap-at-red-sky-sunset-free-image.jpeg?h=800&quality=80" alt="" />
+      <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/silhouette-of-a-guy-with-a-cap-at-red-sky-sunset-free-image.jpeg?h=800&quality=80" alt="image" />
     </div>
 
 
       <div className="contact_right">
 
-      <h2>Send Us a Message</h2>
+      <h2 id="contact_h2">Send Us a Message</h2>
 
-      <form onSubmit={handleSubmit}>
+      <form className="contact_form" onSubmit={handleSubmit}>
         
-        <label htmlFor="name">Enter Name: </label>
+        <label htmlFor="name" id="contact_label">Enter Name: </label>
         <input
-          className="name"
+          className="contact_name"
           name="name"
           id="name"
           type="text"
@@ -48,9 +48,9 @@ const ContactPage = () => {
           required
         />
 
-        <label htmlFor="email">Enter e-mail: </label>
+        <label htmlFor="email" id="contact_label">Enter e-mail: </label>
         <input
-        className="e-mail"
+        className="contact_mail"
         name="email"
         id="email"
         type="email"
@@ -60,7 +60,7 @@ const ContactPage = () => {
           required
         />
 
-        <label htmlFor="message">Message</label>
+        <label htmlFor="message" id="contact_label">Message: </label>
         <textarea
         className="message"
           name="message"
