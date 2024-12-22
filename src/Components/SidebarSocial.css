@@ -1,0 +1,30 @@
+.icon-container {
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  
+  .icon-container:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Specific hover background colors */
+  .bg-success-hover:hover {
+    background-color: #34c358; /* WhatsApp green */
+  }
+  
+  .bg-primary-hover:hover {
+    background-color: #007bff; /* Facebook/LinkedIn blue */
+  }
+  
+  .bg-danger-hover:hover {
+    background-color: #e1306c; /* Instagram pink */
+  }
+  
+  .bg-info-hover:hover {
+    background-color: #1da1f2; /* Twitter sky blue */
+  }
+  

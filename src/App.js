@@ -8,6 +8,7 @@ import ContactPage from "./Components/ContactPage";
 import Navbar from "./Components/Navbar";
 import TodayBooking from "./Components/TodayBooking";
 import Footer from "./Components/Footer";
+import Admin from "./Components/Admin";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/bookingfrom" element={<BookingForm />} />
           <Route path="/todaybooking" element={<TodayBooking />} />
+          <Route path="/adminpage" element={<Admin />} />
         </Routes>
         <Footer />
       </Router>

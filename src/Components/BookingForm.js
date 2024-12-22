@@ -8,6 +8,7 @@ import { format, differenceInDays, eachDayOfInterval, isWithinInterval } from 'd
 
 const BookingForm = ({ onAddCustomer = () => {} }) => {
     const [customerName, setCustomerName] = useState('');
+    const [customerEmail, setCustomerEmail] = useState('');
     const [mobileNumber, setMobileNumber] = useState('');
     const [checkInDate, setCheckInDate] = useState(new Date());
     const [checkOutDate, setCheckOutDate] = useState(new Date());
@@ -18,14 +19,6 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
     const [numberOfDays, setNumberOfDays] = useState(1);
     const [isLoading, setIsLoading] = useState(false);
     const [roomsData, setRoomsData] = useState([]);
-
-
-
-
-
-
-
-
     const locationRoomLimits = {
         "Dantewada": 6,
         "Kirandul": 4,
@@ -140,6 +133,7 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
             checkInTime: format(checkInDate, 'dd/MM/yyyy'),
             checkOutTime: format(checkOutDate, 'dd/MM/yyyy'),
             fullName: customerName,
+            email:customerEmail,
             moNo: mobileNumber,
             location: location,
             customerType: userType,
@@ -175,6 +169,7 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
         onAddCustomer(newCustomer);
 
         setCustomerName('');
+        setCustomerEmail('');
         setMobileNumber('');
         setCheckInDate(new Date());
         setCheckOutDate(new Date());
@@ -205,6 +200,10 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
                             <tr>
                                 <td><label htmlFor="customerName" className="add-booking-label">Customer Name:</label></td>
                                 <td><input type="text" id="customerName" value={customerName} onChange={handleNameChange} minLength={3} required className="add-booking-input" style={{hover:"blue"}} /></td>
+                            </tr>
+                            <tr>
+                                <td><label htmlFor="customerEmail" className="add-booking-label">Customer Name:</label></td>
+                                <td><input type="email" id="customerEmail" value={customerEmail} onChange={handleNameChange}  required className="add-booking-input" style={{hover:"blue"}} /></td>
                             </tr>
                             <tr>
                                 <td><label htmlFor="phoneNumber" className="add-booking-label">Phone Number:</label></td>

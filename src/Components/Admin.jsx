@@ -30,7 +30,7 @@ function Admin() {
 
   return (
     <>
-      <div className={`container ${isSidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
+      <div id='admin-page' className={` ${isSidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
         <Sidebar isOpen={isSidebarOpen} onSidebarClick={handleSidebarClick} onToggle={toggleSidebar} />
         
           <div className="content">
