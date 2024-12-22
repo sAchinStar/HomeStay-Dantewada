@@ -2,61 +2,60 @@ html{
     min-height: 100vh;
   }
   .container{
-    /* background-color: aqua; */
     max-height: 100vh;
     display: flex;
     overflow-y: hidden;
     overflow-x: hidden;
   }
   
-  /* Sidebar Styles */
+  #admin-page{
+    display: flex;
+  }
   .sidebar {
     width: 350px;
-    background-color: #03203e;
+    background-color: #0f79ea;
     color: rgb(238, 243, 245);
     height: 100vh;
     position: relative;
     gap: 40px;
     transition: transform 0.3s ease;
-    z-index: 999; /* Ensure it's above the content */
+    z-index: 999; 
     display: flex;
     flex-direction: column;
     overflow-y: auto;
   }
   
   .sidebar.closed {
-    width: 60px; /* Sidebar collapsed width */
-    transform: translateX(0); /* Keep it in view */
+    width: 60px; 
+    transform: translateX(0); 
   }
   
   .sidebar.open {
-    width: 300px; /* Sidebar full width */
+    width: 300px; 
     height: 100vh;
   
   }
   
-  /* Adjust Icons Visibility in Collapsed Mode */
   
   .sidebar.closed ul li i {
-    margin-right: 10; /* Remove margin when closed */
+    margin-right: 10; 
   }
   
   .sidebar.closed ul li span {
-    display: flex; /* Hide text when sidebar is closed */
+    display: flex; 
   }
   
   .sidebar.open ul li span {
     display: inline-block;
   }
   
-  /* Main Content */
   .main-content {
     flex-grow: 1;
     transition: margin-left 0.3s ease;
   }
   
   .sidebar.closed ~ .main-content {
-    margin-left: 60px; /* Adjust content when sidebar is collapsed */
+    margin-left: 60px; 
   }
    .content{
     width: 100vw;
