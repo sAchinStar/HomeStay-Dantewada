@@ -196,7 +196,7 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
                 <div className="image-container">
                     <img src="/bookform4.svg" alt="Room Booking" className="booking-image" />
                 </div>
-            <div className="book-room-form" style={{display:"flex", flexDirection: "column", justifyContent:"center",alignItems:"center", marginBottom:"5px"}}>
+            <div className="book-room-form" style={{display:"flex", flexDirection: "column", justifyContent:"center",alignItems:"center", marginTop:"0px"}}>
                 <h2 className='add-booking-title'>Plan Your HomeStay With Us</h2>
                 <form className="add-booking-form" onSubmit={checkAvailabilityAndSubmit}>
                     <table className="add-booking-table">

@@ -1,0 +1,81 @@
+/* Common Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+ .all{
+    opacity: 0; 
+    animation: slideIn 1.5s ease-in forwards;
+}
+
+.one {
+    animation-delay: 0s;
+}
+
+.two {
+    animation-delay: 1.5s;
+}
+
+.three {
+    animation-delay: 3s;
+}
+
+.four {
+    animation-delay: 4.5s;
+}
+
+.five {
+    animation-delay: 6s;
+}
+
+.six {
+    animation-delay: 7.5s;
+}
+
+.seven {
+    animation-delay: 9s;
+}
+
+.eight {
+    animation-delay: 10.5s;
+}
+
+.nine {
+    animation-delay: 12s;
+}
+
+.ten {
+    animation-delay: 13.5s;
+}
+
+.eleven {
+    animation-delay: 15s;
+}
+
+.twelve {
+    animation-delay: 16.5s;
+}
+
+.thirteen {
+    animation-delay: 18s;
+}
+
+.fourteen {
+    animation-delay: 19.5s;
+}
+
+.fifteen {
+    animation-delay: 21s;
+}
+
+.sixteen {
+    animation-delay: 22.5s;
+}

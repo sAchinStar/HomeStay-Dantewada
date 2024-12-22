@@ -138,25 +138,6 @@ input::placeholder {
   color: whitesmoke;
 }
 
-@media (max-width: 768px) {
-  .book-room-form-group{
-    padding: 10px;
-    max-width: 375px;
-    font-size: small;
-  }
-
-  .book-room-input,
-  .book-room-select {
-    padding: 6px;
-    color: black;
-  }
-
-  .book-room-button {
-    padding: 8px;
-    border-radius: 2px;
-  }
-}
-
 
 
 
@@ -175,6 +156,7 @@ input::placeholder {
  
   font-size: 24px;
   color: #090843;
+  animation: title 0.5s;
 }
 
 
@@ -232,22 +214,33 @@ input::placeholder {
 } 
 
 
-@media (max-width:667px) {
-  .add-booking-container {
-      max-width: 800px;
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-  }
 
- 
-  .add-booking-table {
-      width: 100%;
-  }
-
-  
-
-  
+.add-booking-container{
+  animation: Slide 1s ease-in;
 }
+
+
+
+@keyframes Slide {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes title {
+  from{
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to{
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
 
 
 /* third sectoin */
@@ -290,9 +283,45 @@ input::placeholder {
   background-color: white;
 }
 
+
+
+
 @media (max-width:667px) {
-.image-container {
-  display: none;
-    
+  .add-booking-container {
+      max-width: 800px;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+  }
+
+ 
+  .add-booking-table {
+      width: 100%;
+  }
+
+  .image-container {
+    display: none;
+      
+  }
+
+  
 }
+
+
+@media (max-width: 768px) {
+  .book-room-form-group{
+    padding: 10px;
+    max-width: 375px;
+    font-size: small;
+  }
+
+  .book-room-input,
+  .book-room-select {
+    padding: 6px;
+    color: black;
+  }
+
+  .book-room-button {
+    padding: 8px;
+    border-radius: 2px;
+  }
 }
