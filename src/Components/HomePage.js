@@ -16,13 +16,13 @@ import AmbarLodge from "../Assets/AmberLodge.jpg"
 
 const HomePage = () => (
   <div>
-    <header>
+    <header className="container text-center">
       <h1>Welcome to Dantewada</h1>
       <p>Discover homestays and exciting activities!</p>
-      <ImageSlider />
     </header>
-    <h2>Top Homestays</h2>
+      <ImageSlider />
     <section className="my-5">
+    <h2>Top Homestays</h2>
       {/* Top Homestays Section */}
       <div className="row align-items-center">
         {/* Previous Button */}
