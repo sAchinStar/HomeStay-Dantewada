@@ -97,6 +97,7 @@ const AllBooking = () => {
         filterCustomers(customers, searchQuery, date, selectedLocation);
     };
 
+
     const updateBookingStatus = async (id, status) => {
         if(status === "Accepted"){
             setButtonA(true);
@@ -262,13 +263,13 @@ const AllBooking = () => {
                                     onClick={() => updateBookingStatus(customer["ID"], 'Accepted')}
                                     disabled={buttonA && loadingRowId === customer["ID"]}
                                 >
-                                    {buttonA && loadingRowId === customer["ID"] ? "Accepting" : "Accept"}
+                                    {buttonA && loadingRowId === customer["ID"] ? "Accept" : "Accept"}
                                 </button>
                                 <button 
                                     onClick={() => updateBookingStatus(customer["ID"], 'Rejected')}
                                     disabled={buttonR && loadingRowId === customer["ID"]}
                                 >
-                                    {buttonR && loadingRowId === customer["ID"] ? "Rejecting" : "Reject"}
+                                    {buttonR && loadingRowId === customer["ID"] ? "Reject" : "Reject"}
                                 </button>
                             </td>
                         </tr>

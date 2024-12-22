@@ -42,10 +42,10 @@ const Sidebar = ({ onSidebarClick }) => {
                 </button>
 
                 <ul>
-                    <li className={activeMenu === 'dashboard' ? 'active' : ''} onClick={() => handleMenuClick('dashboard')}>
+                    {/* <li className={activeMenu === 'dashboard' ? 'active' : ''} onClick={() => handleMenuClick('dashboard')}>
                         <i className="fa fa-dashboard"></i>
                         <span>{isSidebarOpen && 'Dashboard'}</span>
-                    </li>
+                    </li> */}
 
                     <li className={activeMenu === 'bookings' ? 'active' : ''} onClick={toggleBookingDropdown}>
                         <i className="fa fa-book"></i>
