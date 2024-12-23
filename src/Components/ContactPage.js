@@ -99,7 +99,7 @@ const ContactPage = () => {
       <div className="contact_last">
         <p>If you have any questions, feel free to reach out to us:<br />
           Email: support@dantewada-tourism.com<br />
-          Phone: +91-123-456-7890</p>
+          Phone: +91 6265490184</p>
       </div>
     </>
   );

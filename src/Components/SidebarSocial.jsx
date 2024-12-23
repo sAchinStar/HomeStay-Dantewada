@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Sidebar.css"
+import "./SidebarSocial.css"
 const Sidebar = () => {
   return (
     <div className='float-end'>
