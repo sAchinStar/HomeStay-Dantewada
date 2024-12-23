@@ -98,7 +98,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import './BookRoom.css';
-import { height } from '@fortawesome/free-solid-svg-icons/fa0';
+// import { height } from '@fortawesome/free-solid-svg-icons/fa0';
 
 const LoginForm = () => {
     const navigate = useNavigate();
@@ -144,30 +144,32 @@ const LoginForm = () => {
 
 <div className="add-booking-flex">
        
-    <div style={styles.container}>
+    <div style={styles.cont}>
       <form className="book-room-form" onSubmit={handleSubmit} style={styles.form}>
-        <h2> Admin Login</h2>
+        <h2 className='h2'> Admin Login</h2>
         <div style={styles.inputGroup}>
-          <label htmlFor="email">Email:</label>
+          <label className='label' htmlFor="email">Email:</label>
           <input
             type="email"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            className='input'
           />
         </div>
         <div style={styles.inputGroup}>
-          <label htmlFor="password">Password:</label>
+          <label className='label' htmlFor="password">Password:</label>
           <input
             type="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+             className='input'
             required
           />
         </div>
-        <button type="submit" style={styles.button}>
+        <button className='bt-buton' type="submit" style={styles.button}>
         {isLoading ? "Loging...." : "Login"}
         </button>
         {message && <p style={styles.message}>{message}</p>}
@@ -182,7 +184,7 @@ const LoginForm = () => {
 };
 
 const styles = {
-  container: {
+  cont: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -203,16 +205,7 @@ const styles = {
   inputGroup: {
     marginBottom: '15px',
   },
-  button: {
-    backgroundColor: '#007BFF',
-    color: '#fff',
-    padding: '10px',
-    width: "100%",
-
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-  },
+ 
   message: {
     marginTop: '15px',
     color: 'green',

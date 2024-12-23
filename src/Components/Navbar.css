@@ -1,0 +1,23 @@
+
+.nav_logo{
+    width: 90px;
+    height: 90px;
+    border-radius: 30%;
+}
+
+.nav-link:hover {
+    border: 1px solid white;  
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.2), -7px -4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 80px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.nav-link:focus{
+    border: 1px solid #004aad;
+    background: linear-gradient(90deg, #3a7bd5, #73a9ff);
+   color: white;
+    max-width: 80px;
+    text-align: center;
+    border-radius: 10px;
+   }

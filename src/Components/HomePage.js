@@ -1,16 +1,30 @@
 import React from "react";
 import ImageSlider from "./ImageSlider";
 import Card from "./Card";
+import Barsoor from "../Assets/ShubamHomeStay.png"
+import samloor from "../Assets/samloorAct.png"
+import bacheli from "../Assets/BacheliAct.png"
+import barsurAct from "../Assets/barsurAct.png"
+import fulpadAct from "../Assets/fulpadAct.png"
+import dholkalAct from "../Assets/dholkalAct.png"
+import dantewadaAct from "../Assets/dantewadaAct.png"
+import olddhramshala from "../Assets/dharamshala.jpg"
+import madhuban from "../Assets/madhubanHotel.jpg"
+import AmbarLodge from "../Assets/AmberLodge.jpg"
+
+
 
 const HomePage = () => (
   <div>
-    <header>
+    <header className="container text-center">
+      
       <h1>Welcome to Dantewada</h1>
       <p>Discover homestays and exciting activities!</p>
-      <ImageSlider />
+    
     </header>
-    <h2>Top Homestays</h2>
+      <ImageSlider />
     <section className="my-5">
+    <h2>Top Homestays</h2>
       {/* Top Homestays Section */}
       <div className="row align-items-center">
         {/* Previous Button */}
@@ -31,26 +45,26 @@ const HomePage = () => (
             <div className="carousel-inner">
               <div className="carousel-item active">
                 <div className="d-flex justify-content-evenly">
-                  <Card title="Homestay 1" description="A cozy retreat in the hills." />
-                  <Card title="Homestay 2" description="A luxurious riverside villa." />
-                  <Card title="Homestay 3" description="A serene getaway in the woods." />
-                  <Card title="Homestay 4" description="A beachside paradise." />
+                  <Card picture={Barsoor} title="Subham Home Stay" description="A cozy retreat in the hills." />
+                  <Card picture={olddhramshala} title="Dharmshala" description="Danteshwari Dharmshala is located in Dantewada, Chhattisgarh." />
+                  <Card picture={madhuban} title="Madhuban Hotel" description="A serene getaway in the woods." />
+                  <Card picture={AmbarLodge} title="Ambar Lodge" description="A beachside paradise." />
                 </div>
               </div>
               <div className="carousel-item">
                 <div className="d-flex justify-content-evenly">
-                  <Card title="Homestay 5" description="A charming farmhouse experience." />
-                  <Card title="Homestay 6" description="An eco-friendly mountain cabin." />
-                  <Card title="Homestay 7" description="A quaint village homestay." />
-                  <Card title="Homestay 8" description="A contemporary urban suite." />
+                  <Card picture={Barsoor} title="Subham Home Stay" description="A cozy retreat in the hills." />
+                  <Card picture={olddhramshala} title="Dharmshala" description="Danteshwari Dharmshala is located in Dantewada, Chhattisgarh." />
+                  <Card picture={madhuban} title="Madhuban Hotel" description="A serene getaway in the woods." />
+                  <Card picture={AmbarLodge} title="Ambar Lodge" description="A beachside paradise." />
                 </div>
               </div>
               <div className="carousel-item">
                 <div className="d-flex justify-content-evenly">
-                  <Card title="Homestay 9" description="A charming farmhouse experience." />
-                  <Card title="Homestay 10" description="An eco-friendly mountain cabin." />
-                  <Card title="Homestay 11" description="A quaint village homestay." />
-                  <Card title="Homestay 12" description="A contemporary urban suite." />
+                  <Card picture={Barsoor} title="Subham Home Stay" description="A cozy retreat in the hills." />
+                  <Card picture={olddhramshala} title="Dharmshala" description="Danteshwari Dharmshala is located in Dantewada, Chhattisgarh." />
+                  <Card picture={madhuban} title="Madhuban Hotel" description="A serene getaway in the woods." />
+                  <Card picture={AmbarLodge} title="Ambar Lodge" description="A beachside paradise." />
                 </div>
               </div>
             </div>
@@ -77,22 +91,22 @@ const HomePage = () => (
       <h2 className="text-center mb-4">Featured Activities</h2>
       <div className="row">
         <div className="col-md-4">
-          <Card title="Trekking Adventure" description="Explore scenic trails with a guide." />
+          <Card picture={samloor} title="Samlur Shiva Temple" description="Samlur is located around 9 KMs from District HQ Dantewada, here lies an ancient Shiva Temple almost intact and is being regularly worshiped by the disciples." />
         </div>
         <div className="col-md-4">
-          <Card title="Cultural Tour" description="Immerse yourself in local traditions and art." />
+          <Card picture={bacheli} title="Bacheli" description="Located 28 KMs from District HQ Dantewada, Bacheli is famous for finest Iron ore of the country. NMDC is doing the mining activity in Bacheli and Kirandul towns on Bailadila ranges. " />
         </div>
         <div className="col-md-4">
-          <Card title="Yoga Retreat" description="Relax and rejuvenate with daily yoga sessions." />
+          <Card picture={barsurAct} title="Barsur – An Archaeological Treasure" description="Once the Capital of Nagavansh Raja Banasur, Barsur is a fond destination for one who love history and ancient sculptures. This tiny town is filled with archaeological treasures." />
         </div>
         <div className="col-md-4">
-          <Card title="Cooking Workshop" description="Learn to prepare authentic local dishes." />
+          <Card picture={fulpadAct} title="Fulpad Waterfalls" description="Located amidst lush green hilly area Fulpad is an adventure spot for one who love trekking and nature alike" />
         </div>
         <div className="col-md-4">
-          <Card title="Wildlife Safari" description="Discover exotic animals in their natural habitat." />
+          <Card picture={dholkalAct} title="Dholkal Ganesh" description="Dholkal Ganesh is a beautiful spot located 3000 feet high in the Bailadila Mountain ranges in District Dantewada.  A 3 Feet beautiful stone idol of Lord Ganesha believed to be made during the Naga dynasty between 10th and 11th centuries is the main attraction of the site. Located 13 KMs from the district HQ Dantewada, this spot is the heaven for nature lovers, and for those who love to trek amidst lush green hillocks. " />
         </div>
         <div className="col-md-4">
-          <Card title="Water Sports" description="Enjoy activities like kayaking and snorkeling." />
+          <Card picture={dantewadaAct} title="Dantewada" description="Temple dedicated to the most revered Goddess of Bastar Ma Danteshwari, believed to be one among the 52 Shakti Pithas. Teeth of Sati Devi is believed to have fallen here, hence the name Dantewada derived." />
         </div>
       </div>
     </section>

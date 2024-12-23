@@ -201,6 +201,7 @@ input::placeholder {
 
 .add-booking-button:hover{
   background-color: #27ae47;
+  color: white;
 
 }
 
