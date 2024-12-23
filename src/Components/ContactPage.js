@@ -3,6 +3,7 @@ import "./ContactPage.css";
 import emailjs from '@emailjs/browser';
 
 const ContactPage = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,29 +15,28 @@ const ContactPage = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   alert("Thank you for reaching out! We'll get back to you soon.");
-  //   // Add logic to send the form data via email or API.
-  // };
+  
 
   //send mail
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
-
-    emailjs.sendForm('service_mixuanm', 'template_hynaexl', form.current,'vIlk7nXuyruvDF_Xx')
+    setIsLoading(true);
+    emailjs.sendForm('service_mixuanm', 'template_hynaexl', form.current, 'vIlk7nXuyruvDF_Xx')
       .then(
         () => {
           console.log('SUCCESS!');
           alert("Thank you for reaching out! We'll get back to you soon.");
+          setIsLoading(false);
+
         },
         (error) => {
           console.log('FAILED...', error.text);
+          setIsLoading(false);
+
         },
       );
   };
-
   return (
     <>
       <header className="contact_header">Contact Us</header>
@@ -88,7 +88,7 @@ const ContactPage = () => {
               onChange={handleChange}
               required
             ></textarea>
-            <input type="submit" className="btn btn-outline-success" value={"Send"}/>
+            <input type="submit" className="btn btn-outline-success" value={isLoading ? "Sending..." : "Send"} />
           </form>
 
 
