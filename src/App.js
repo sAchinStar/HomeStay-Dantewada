@@ -9,6 +9,7 @@ import Navbar from "./Components/Navbar";
 import TodayBooking from "./Components/TodayBooking";
 import Footer from "./Components/Footer";
 import Admin from "./Components/Admin";
+import Login from "./Components/Login";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/bookingfrom" element={<BookingForm />} />
           <Route path="/todaybooking" element={<TodayBooking />} />
           <Route path="/adminpage" element={<Admin />} />
+          <Route path="login-page" element={<Login />} />
         </Routes>
         <Footer />
       </Router>

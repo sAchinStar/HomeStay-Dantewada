@@ -24,7 +24,7 @@ function Navbar() {
                             <Link className="nav-link" to="/contact">Contact</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/adminpage">Admin</Link>
+                            <Link className="nav-link" to="/login-page">Admin</Link>
                         </li>
                         <li className="nav-item dropdown">
                             {/* <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

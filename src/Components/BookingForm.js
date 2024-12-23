@@ -143,7 +143,7 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
         };
 
         try {
-            await fetch('https://script.google.com/macros/s/AKfycbxEBL7mAh7-bfdR3S3GiJbuYtHcbAswiTFbhIgaqLKpFnXzif-htHgoZRJ8bD2tnD7c/exec', {
+            await fetch('https://script.google.com/macros/s/AKfycbynkwVoQiZjYCsX4qzxvEEUA5ZsX4dGROUJNwLVyI4TFE41qcQe8C_Mj_FLQA1wcQdP/exec', {
             //https://script.google.com/macros/s/AKfycbxEBL7mAh7-bfdR3S3GiJbuYtHcbAswiTFbhIgaqLKpFnXzif-htHgoZRJ8bD2tnD7c/exec
                 method: 'POST',
                 headers: {
@@ -198,12 +198,12 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
                         <tbody>
                             {/* Form fields here, similar to your original form */}
                             <tr>
-                                <td><label htmlFor="customerName" className="add-booking-label">Customer Name:</label></td>
+                                <td><label htmlFor="customerName" className="add-booking-label">Full Name:</label></td>
                                 <td><input type="text" id="customerName" value={customerName} onChange={handleNameChange} minLength={3} required className="add-booking-input" style={{hover:"blue"}} /></td>
                             </tr>
                             <tr>
-                                <td><label htmlFor="customerEmail" className="add-booking-label">Customer Name:</label></td>
-                                <td><input type="email" id="customerEmail" value={customerEmail} onChange={handleNameChange}  required className="add-booking-input" style={{hover:"blue"}} /></td>
+                                <td><label  className="add-booking-label">Email:</label></td>
+                                <td><input type="email" id="customerEmail" value={customerEmail} onChange={(e) => setCustomerEmail(e.target.value)}  required className="add-booking-input" style={{hover:"blue"}} /></td>
                             </tr>
                             <tr>
                                 <td><label htmlFor="phoneNumber" className="add-booking-label">Phone Number:</label></td>

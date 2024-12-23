@@ -54,7 +54,7 @@ const Sidebar = ({ onSidebarClick }) => {
                         <ul className={showBookingDropdown ? 'open' : ''}>
                             <li className={activeMenu === 'allBookings' ? 'active' : ''} onClick={() => handleMenuClick('allBookings')}>
                                 <i className="fa fa-list"></i>
-                                <span>{isSidebarOpen && 'All Bookings'}</span>
+                                <span>{isSidebarOpen && 'Today Bookings'}</span>
                             </li>
                             <li className={activeMenu === 'addBooking' ? 'active' : ''} onClick={() => handleMenuClick('addBooking')}>
                                 <i className="fa fa-plus"></i>
