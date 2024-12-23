@@ -15,6 +15,7 @@ import list9 from "../Assets/list9.jpg";
 import list10 from "../Assets/list10.jpg";
 import list11 from "../Assets/list11.jpg";
 import list12 from "../Assets/list12.jpg";
+import DetailsPage from "./DetailsPage";
 
 // import { Link } from "react-router-dom";
 // import { fetchHomestays } from "../api";
@@ -28,6 +29,7 @@ const ListingsPage = () => {
 
   return (
     <div className="container d-flex justify-content-evenly flex-wrap">
+      <DetailsPage/>
      
       <div className="one all">
       <Card picture={list1} title="Hotel Anurag" description= "Hotel Anurag, Chacha Chowk Kailash Nagar Dantewada, Dantewada HO, Dantewada - 494449 (Near Bus Stand)"/>   
