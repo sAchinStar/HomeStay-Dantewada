@@ -10,12 +10,13 @@ import TodayBooking from "./Components/TodayBooking";
 import Footer from "./Components/Footer";
 import Admin from "./Components/Admin";
 import Login from "./Components/Login";
-
+// import SidebarSocial from "./Components/SidebarSocial"
 const App = () => {
   return (
     <>
       <Router>
       <Navbar />
+      {/* <SidebarSocial /> */}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />

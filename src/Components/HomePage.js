@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import ImageSlider from "./ImageSlider";
 import Card from "./Card";
 import Barsoor from "../Assets/ShubamHomeStay.png"
@@ -11,16 +11,42 @@ import dantewadaAct from "../Assets/dantewadaAct.png"
 import olddhramshala from "../Assets/dharamshala.jpg"
 import madhuban from "../Assets/madhubanHotel.jpg"
 import AmbarLodge from "../Assets/AmberLodge.jpg"
+import Typed from "typed.js"
 
 
-
-const HomePage = () => (
-  <div>
-    <header className="header_container text-center">
-      
-      <h1>Welcome to Dantewada</h1>
-      <p>Discover homestays and exciting activities!</p>
+const HomePage = () => {
+  
+  
+      useEffect(() => {
+        const typedWelcome = new Typed('#typed-welcome', {
+          strings: ['Welcome to Dantewada'],
+          typeSpeed: 90,
+          showCursor: false,
+          onComplete: () => {
+            // After completing the first string, start the second
+            const typedDiscover = new Typed('#typed-discover', {
+              strings: ['Discover homestays and exciting activities!'],
+              typeSpeed: 90,
+              backSpeed:25,
+              loop:true,
+            });
+          },
+        });
     
+        return () => {
+          typedWelcome.destroy();
+        };
+      }, []);
+  return (
+
+
+  <div>
+    <header className="container text-center">
+    {/* <h3> <span id="typed-element" className="comfort-comment" style={{ whiteSpace: 'pre-line' }}></span> </h3> */}
+    <h1><span id="typed-welcome"></span> </h1>
+    <p style={{ fontSize: '20px', marginTop: '10px' }}>
+    <span id="typed-discover" >  </span>
+    </p>
     </header>
       <ImageSlider />
     <section className="my-5">
@@ -113,5 +139,6 @@ const HomePage = () => (
 
   </div>
 );
+};
 
 export default HomePage;
