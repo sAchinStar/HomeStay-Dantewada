@@ -120,20 +120,20 @@ const Dashboard = () => {
 
     useEffect(() => {
         const typed = new Typed('#typed-element', {
-          strings: [
-            'You want today\'s data  click BOOKING !',
-            'You want History  click HISTTORY !',
-            '',
-          ],
-          typeSpeed: 90,
-          backSpeed: 25,
-          loop: true,
+            strings: [
+                'You want today\'s data  click BOOKING !',
+                'You want History  click HISTTORY !',
+                '',
+            ],
+            typeSpeed: 90,
+            backSpeed: 25,
+            loop: true,
         });
-    
+
         return () => {
-          typed.destroy();
+            typed.destroy();
         };
-      }, []);
+    }, []);
 
 
 
@@ -180,7 +180,11 @@ const Dashboard = () => {
         <div className="dashboard-container">
             <h2 className="dashboard-heading">Hello Sir!</h2>
             {/* <h2 className="dashboard-heading">Today's Data!</h2> */}
-          <h3> <span id="typed-element" className="comfort-comment"></span> </h3>
+            <h3> <span id="typed-element" className="comfort-comment"></span> </h3>
+
+            <div className="image-container">
+                <img src="/bookform4.svg" alt="Room Booking" className="booking-image" />
+            </div>
             {/* <label htmlFor="location-select">Select Location:</label>
             <select 
                 id="location-select" 
