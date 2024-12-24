@@ -1,8 +1,8 @@
-#Homestay Website Project Documentation
+<strong>Homestay Website Project Documentation</strong>
 Project Overview
 This project involves the development of a Homestay Website using React.js, Bootstrap, CSS, and animations. The website aims to provide users with a seamless platform for browsing and booking homestays, ensuring a user-friendly experience through attractive design and interactive elements.
 
-#Features
+<strong>Features</strong>
 User-friendly Interface:
 Clean and responsive design.
 Easy navigation for browsing homestays.
@@ -20,7 +20,7 @@ Transition effects for modals and popups.
 Responsive Design:
 Fully optimized for mobile, tablet, and desktop devices.
 
-#Technologies Used
+<strong>Technologies Used</strong>
 React.js:
 For building reusable components and managing the state of the application.
 Bootstrap:
@@ -30,7 +30,7 @@ For custom styling and enhancing the visual appeal.
 Animations:
 Implemented using CSS animations and libraries like Framer Motion or React Spring.
 
-#Project Structure
+<strong>Project Structure</strong>
 
 HomestayWebsite/
 ├── public/
@@ -54,7 +54,7 @@ HomestayWebsite/
 │       └── Animations.css
 └── package.json
 
-#Implementation Steps
+<strong>Implementation Steps</strong>
 Setup:
 Initialize the React application using create-react-app.
 Design Layout:
