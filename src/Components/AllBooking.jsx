@@ -22,6 +22,7 @@ const AllBooking = () => {
             if (!response.ok) throw new Error('Network response was not ok');
             
             const data = await response.json();
+            console.log("all data :",data)
             if (data.rooms) {
                 const formattedData = data.rooms;
                 setCustomers(formattedData);
@@ -41,9 +42,18 @@ const AllBooking = () => {
     }, []);
 
     const filterCustomers = (data, query, date, location) => {
-        const today = new Date().toLocaleDateString();
+        const today = new Date();
+const formattedDate = new Intl.DateTimeFormat('en-GB', {
+  day: '2-digit',
+  month: '2-digit',
+  year: 'numeric',
+}).format(today);
+
+console.log(formattedDate); // Output: dd/mm/yy
+
+        // const today = new Date().toLocaleDateString();
         let filtered = data;
-      console.log("this is new day:",today)
+    //   console.log("this is new day:",today)
         if (query) {
             const lowerCaseQuery = query.toLowerCase();
             filtered = filtered.filter(customer => 
@@ -67,9 +77,9 @@ const AllBooking = () => {
                 // const checkInDate = new Date(customer["Check In Time"]).toLocaleDateString();
                 const checkInDate = customer["Check In Time"];
                 // const checkInDate = new Date(checkInTime).toLocaleDateString();
-
-                // console.log("this is a date",checkInDate)
-                return checkInDate === today;
+                
+                console.log("this is a date",checkInDate)
+                return checkInDate === formattedDate;
             });
 
         }
