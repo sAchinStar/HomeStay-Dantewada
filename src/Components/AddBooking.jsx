@@ -7,12 +7,13 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { format, differenceInDays } from 'date-fns';
 import Swal from "sweetalert2";
 
-const AddBooking = ({ onAddCustomer = () => {} }) => {
+const AddBooking = ({ onAddCustomer = () => { } }) => {
     const [customerName, setCustomerName] = useState('');
+    const [customerEmail, setCustomerEmail] = useState('');
     const [mobileNumber, setMobileNumber] = useState('');
     const [checkInDate, setCheckInDate] = useState(new Date());
     const [checkOutDate, setCheckOutDate] = useState(new Date());
-    const [userType, setUserType] = useState('Non-Government');
+    const [userType, setUserType] = useState('General');
     const [location, setLocation] = useState('Dantewada');
     const [numberOfGuests, setNumberOfGuests] = useState(1);
     const [numberOfRooms, setNumberOfRooms] = useState(1);
@@ -23,11 +24,11 @@ const AddBooking = ({ onAddCustomer = () => {} }) => {
     const maxRooms = location === 'Dantewada' ? 6 : 2;
 
     useEffect(() => {
-        if(checkOutDate === (checkInDate) + 1){
-            setNumberOfDays(differenceInDays(checkOutDate, checkInDate) );
-        }else if (checkOutDate > checkInDate) {
-            setNumberOfDays(differenceInDays(checkOutDate, checkInDate) );
-        } else if(checkOutDate === checkInDate) {
+        if (checkOutDate === (checkInDate) + 1) {
+            setNumberOfDays(differenceInDays(checkOutDate, checkInDate));
+        } else if (checkOutDate > checkInDate) {
+            setNumberOfDays(differenceInDays(checkOutDate, checkInDate));
+        } else if (checkOutDate === checkInDate) {
             setNumberOfDays(1);
         }
     }, [checkInDate, checkOutDate]);
@@ -43,9 +44,9 @@ const AddBooking = ({ onAddCustomer = () => {} }) => {
         const regex = /^[0-9]*$/;  // Allow only numbers
         const value = e.target.value;
 
-    if (regex.test(value) && value.length <= 10) {
-        setMobileNumber(value);
-    }
+        if (regex.test(value) && value.length <= 10) {
+            setMobileNumber(value);
+        }
     };
 
     const handleSubmit = async (e) => {
@@ -63,6 +64,7 @@ const AddBooking = ({ onAddCustomer = () => {} }) => {
             checkInTime: format(checkInDate, 'dd/MM/yyyy'),
             checkOutTime: format(checkOutDate, 'dd/MM/yyyy'),
             fullName: customerName,
+            email: customerEmail,
             moNo: mobileNumber,
             location: location,
             customerType: userType,
@@ -98,10 +100,11 @@ const AddBooking = ({ onAddCustomer = () => {} }) => {
 
         // Reset the form fields
         setCustomerName('');
+        setCustomerEmail('');
         setMobileNumber('');
         setCheckInDate(new Date());
         setCheckOutDate(new Date());
-        setUserType('Non-Government');
+        setUserType('General');
         setLocation('Dantewada');
         setNumberOfGuests(1);
         setNumberOfRooms(1);
@@ -115,8 +118,12 @@ const AddBooking = ({ onAddCustomer = () => {} }) => {
                 <table className="add-booking-table">
                     <tbody>
                         <tr>
-                            <td><label htmlFor="customerName" className="add-booking-label">Customer Name:</label></td>
+                            <td><label htmlFor="customerName" className="add-booking-label">Full Name:</label></td>
                             <td><input type="text" id="customerName" value={customerName} onChange={handleNameChange} required className="add-booking-input" /></td>
+                        </tr>
+                        <tr>
+                            <td><label className="add-booking-label">Email:</label></td>
+                            <td><input type="email" id="customerEmail" value={customerEmail} onChange={(e) => setCustomerEmail(e.target.value)} required className="add-booking-input" style={{ hover: "blue" }} /></td>
                         </tr>
                         <tr>
                             <td><label htmlFor="phoneNumber" className="add-booking-label">Phone Number:</label></td>
@@ -154,16 +161,17 @@ const AddBooking = ({ onAddCustomer = () => {} }) => {
                             <td><label className="add-booking-label">Number of Guests:</label></td>
                             <td><input type="number" value={numberOfGuests} onChange={(e) => setNumberOfGuests(e.target.value)} required className="add-booking-input" min="1" /></td>
                         </tr>
-                        <tr>
+                        {/* <tr>
                             <td><label className="add-booking-label">Number of Rooms:</label></td>
                             <td><input type="number" value={numberOfRooms} onChange={(e) => setNumberOfRooms(e.target.value)} required className="add-booking-input" min="1" max={maxRooms} /></td>
-                        </tr>
+                        </tr> */}
                         <tr>
                             <td><label htmlFor="location" className="add-booking-label">Location:</label></td>
                             <td>
                                 <select id="location" value={location} onChange={(e) => setLocation(e.target.value)} required className="add-booking-select">
                                     <option value="Dantewada">Dantewada</option>
                                     <option value="Barsur">Barsur</option>
+                                    <option value="Kirandul">Kirandul</option>
                                     <option value="Geedam">Geedam</option>
                                 </select>
                             </td>
@@ -198,13 +206,13 @@ export default AddBooking;
 //     const [location, setLocation] = useState('Dantewada');
 //     const [numberOfGuests, setNumberOfGuests] = useState(1);
 //     const [numberOfRooms, setNumberOfRooms] = useState(1);
-//     const [numberOfDays, setNumberOfDays] = useState(0); 
+//     const [numberOfDays, setNumberOfDays] = useState(0);
 //     const [isLoading, setIsLoading] = useState(false);
 
 //     useEffect(() => {
 //         // Calculate the number of days only if dates are selected
 //         if (checkInDate && checkOutDate && checkOutDate >= checkInDate) {
-//             setNumberOfDays(differenceInDays(checkOutDate, checkInDate) + 1); 
+//             setNumberOfDays(differenceInDays(checkOutDate, checkInDate) + 1);
 //         } else {
 //             setNumberOfDays(0);
 //         }

@@ -106,11 +106,12 @@ const Customers = () => {
                         <th>Check-Out Date</th>
                         <th>Total Days</th>
                         <th>Full Name</th>
+                        <th>Email</th>
                         <th>Mobile No</th>
                         <th>Location</th>
                         <th>Customer Type</th>
-                        <th>Aadhar/Pan</th>
-                        <th>No of Rooms</th>
+                        {/* <th>Aadhar/Pan</th> */}
+                        {/* <th>No of Rooms</th> */}
                         <th>Total Guests</th>
                         <th>Status</th>
                     </tr>
@@ -125,11 +126,12 @@ const Customers = () => {
                             <td>{customer["Check Out Time"]}</td>
                             <td>{customer["Total Days"]}</td>
                             <td>{customer["Full Name"]}</td>
+                            <td>{customer["email"]}</td>
                             <td>{customer["Mo No"]}</td>
                             <td>{customer["Location"]}</td>
                             <td>{customer["Customer Type"]}</td>
-                            <td>{customer["Aadhar-Pan/link"]}</td>
-                            <td>{customer["No Off Room"]}</td>
+                            {/* <td>{customer["Aadhar-Pan/link"]}</td> */}
+                            {/* <td>{customer["No Off Room"]}</td> */}
                             <td>{customer["Total Guest"]}</td>
                             <td>
                                 {customer.Status === 'Accepted' ? (
