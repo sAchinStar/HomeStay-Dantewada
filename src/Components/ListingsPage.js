@@ -29,74 +29,27 @@ const ListingsPage = () => {
 
   return (
     <>
-      <DetailsPage/>
-    <div className="container d-flex justify-content-evenly flex-wrap">
-     
-      <div className="one all">
-      <Card picture={list1} title="Hotel Anurag" description= "Hotel Anurag, Chacha Chowk Kailash Nagar Dantewada, Dantewada HO, Dantewada - 494449 (Near Bus Stand)"/>   
-      </div>
+      <DetailsPage />
+      <div className="container d-flex justify-content-evenly flex-wrap">
 
-      <div className="two all">
-      <Card picture={list2} title="Hotel Sunrise" description="Hotel Sunrise, Kailash Nagar Road, Ward 14, Katekalyan, Dantewada - 494449 (Behind Old Circuit House, Near Vishal Traders)"/>
-      </div>
+        <Card className="one all" picture={list1} title="Hotel Anurag" description="Hotel Anurag, Chacha Chowk Kailash Nagar Dantewada, Dantewada HO, Dantewada - 494449 (Near Bus Stand)" />
+        <Card className="two all" picture={list2} title="Hotel Sunrise" description="Hotel Sunrise, Kailash Nagar Road, Ward 14, Katekalyan, Dantewada - 494449 (Behind Old Circuit House, Near Vishal Traders)" />
+        <Card className="three all" picture={list5} title="Hotel Ravi Residency" description="Katekalyan, Dantewada - 494449 (Near Pwd Rest House, Kailash Nagar)" />
+        <Card className="four all" picture={list4} title="Hotel Gaurav" description="Jagadalpur, Chhattisgarh, Gurdwara Road, Jagdalpur Ho, Jagdalpur - 494001 (Near By Gurudwara)" />
+        <Card className="five all" picture={list3} title="Madhuban" description="High School Road, High School Road, Jagdalpur - 494001 (Opposite Hatha Ground)" />
+        <Card className="six all" picture={list6} title="Binaka Heritage" description="Dalpat Sagar Ward, Bajrang Nagar, Bajrang Nagar, Jagdalpur - 494001" />
+        <Card className="seven all" picture={list7} title="Hotel Aaradhya" description="Keshloor Chowk, Bastar - 494442 (Next to Chacha Dhaba, Near New Medical College)" />
+        <Card className="eight all" picture={list8} title="Jai Sheetla Hotel" description="Nh30, Hikmipara, Hikmipara, Jagdalpur - 494001" />
+        <Card className="nine all" picture={list9} title="Hotel Anand Niwas" description="Motitalab Para, Old Gurudwara Road, Motitalab Para, Jagdalpur - 494001 (Near Sanjay Market)" />
+        <Card className="ten all" picture={list10} title="Ghumar Munda" description="Near Kishan Dairy, Bangapal, Jagdalpur, Chhattisgarh 494223" />
+        <Card className="eleven all" picture={list11} title="Hotel Devansh Residency" description="Kasturba Marg, Chandni Chowk, Jagdalpur - 494001 (Near Collectorate)" />
+        <Card className="twelve all" picture={list12} title="Rsn Palace" description="Konta, Dantewada - 494114" />
+        <Card className="thirteen all" picture={list9} title="Hotel Anand Niwas" description="Motitalab Para, Old Gurudwara Road, Motitalab Para, Jagdalpur - 494001 (Near Sanjay Market)" />
+        <Card className="fourteen all" picture={list10} title="Ghumar Munda" description="Near Kishan Dairy, Bangapal, Jagdalpur, Chhattisgarh 494223" />
+        <Card className="fifteen all" picture={list11} title="Hotel Devansh Residency" description="Kasturba Marg, Chandni Chowk, Jagdalpur - 494001 (Near Collectorate)" />
+        <Card className="sixteen all" picture={list12} title="Rsn Palace" description="Konta, Dantewada - 494114" />
 
-      <div className="three all">
-      <Card picture={list5} title="Hotel Ravi Residency" description="Katekalyan, Dantewada - 494449 (Near Pwd Rest House, Kailash Nagar)"/>
       </div>
-
-      <div className="four all">
-      <Card picture={list4}  title="Hotel Gaurav"  description="Jagadalpur, Chhattisgarh, Gurdwara Road, Jagdalpur Ho, Jagdalpur - 494001 (Near By Gurudwara)"/>
-      </div>
-
-      <div className="five all">
-      <Card picture={list3} title="Madhuban" description="High School Road, High School Road, Jagdalpur - 494001 (Opposite Hatha Ground)"/>
-    </div>
-
-      <div className="six all">
-      <Card picture={list6} title="Binaka Heritage" description="Dalpat Sagar Ward, Bajrang Nagar, Bajrang Nagar, Jagdalpur - 494001"/>
-      </div>
-
-      <div className="seven all">
-      <Card picture={list7} title="Hotel Aaradhya" description="Keshloor Chowk, Bastar - 494442 (Next to Chacha Dhaba, Near New Medical College)"/>
-      </div>
-
-      <div className="eight all">
-      <Card picture={list8} title="Jai Sheetla Hotel" description="Nh30, Hikmipara, Hikmipara, Jagdalpur - 494001"/>
-      </div>
-    
-
-      <div className="nine all">
-      <Card picture={list9} title="Hotel Anand Niwas" description="Motitalab Para, Old Gurudwara Road, Motitalab Para, Jagdalpur - 494001 (Near Sanjay Market)"/>
-      </div>
-
-      <div className="ten all">
-      <Card picture={list10} title="Ghumar Munda" description="Near Kishan Dairy, Bangapal, Jagdalpur, Chhattisgarh 494223"/>
-      </div>
-
-      <div className="eleven all">
-      <Card picture={list11} title="Hotel Devansh Residency" description="Kasturba Marg, Chandni Chowk, Jagdalpur - 494001 (Near Collectorate)"/>
-      </div>
-
-      <div className="twelve all">
-      <Card picture={list12} title="Rsn Palace" description="Konta, Dantewada - 494114"/>
-      </div>
-
-      <div className="nine all">
-      <Card picture={list9} title="Hotel Anand Niwas" description="Motitalab Para, Old Gurudwara Road, Motitalab Para, Jagdalpur - 494001 (Near Sanjay Market)"/>
-      </div>
-
-      <div className="ten all">
-      <Card picture={list10} title="Ghumar Munda" description="Near Kishan Dairy, Bangapal, Jagdalpur, Chhattisgarh 494223"/>
-      </div>
-
-      <div className="eleven all">
-      <Card picture={list11} title="Hotel Devansh Residency" description="Kasturba Marg, Chandni Chowk, Jagdalpur - 494001 (Near Collectorate)"/>
-      </div>
-
-      <div className="twelve all">
-      <Card picture={list12} title="Rsn Palace" description="Konta, Dantewada - 494114"/>
-      </div>
-    </div>
     </>
   );
 };

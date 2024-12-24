@@ -112,9 +112,9 @@ const HomePage = () => {
     </section>
 
 
-    <section className="feature_container my-5">
-      {/* Featured Activities Section */}
       <h2 className="text-center mb-4">Featured Activities</h2>
+    <section className="container my-5 ml-5">
+      {/* Featured Activities Section */}
       <div className="row">
         <div className="col-md-4">
           <Card picture={samloor} title="Samlur Shiva Temple" description="Samlur is located around 9 KMs from District HQ Dantewada, here lies an ancient Shiva Temple almost intact and is being regularly worshiped by the disciples." />
