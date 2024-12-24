@@ -16,7 +16,7 @@ import AmbarLodge from "../Assets/AmberLodge.jpg"
 
 const HomePage = () => (
   <div>
-    <header className="container text-center">
+    <header className="header_container text-center">
       
       <h1>Welcome to Dantewada</h1>
       <p>Discover homestays and exciting activities!</p>
@@ -86,7 +86,7 @@ const HomePage = () => (
     </section>
 
 
-    <section className="container my-5">
+    <section className="feature_container my-5">
       {/* Featured Activities Section */}
       <h2 className="text-center mb-4">Featured Activities</h2>
       <div className="row">
