@@ -14,4 +14,26 @@
     transform: scale(1.1); /* Scale the element to 120% */
     z-index: 1;
   }
-  
+
+  /* Text Styling */
+  .scroll-card {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all 0.5s ease-in-out;
+    margin-bottom: 20px;
+  }
+
+  /* When text is in viewport */
+  .visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Make first 5 texts visible when page loads */
+  .scroll-card:nth-child(-n+4) {
+    opacity: 1;
+    transform: translateY(0);
+  }
