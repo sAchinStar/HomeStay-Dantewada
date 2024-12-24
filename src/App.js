@@ -11,6 +11,7 @@ import Footer from "./Components/Footer";
 import Admin from "./Components/Admin";
 import Login from "./Components/Login";
 import "./App.css"
+import Status from "./Components/Status";
 // import SidebarSocial from "./Components/SidebarSocial"
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/todaybooking" element={<TodayBooking />} />
           <Route path="/adminpage" element={<Admin />} />
           <Route path="login-page" element={<Login />} />
+          <Route path="/status-page" element={<Status />} />
         </Routes>
         <Footer />
       </Router>

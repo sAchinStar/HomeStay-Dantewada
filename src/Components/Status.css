@@ -1,0 +1,51 @@
+/* Allbooking.css or Status.css */
+.responsive-swal-popup {
+    font-size: 1rem; /* Default font size */
+}
+
+@media (max-width: 768px) {
+    .responsive-swal-popup {
+        font-size: 0.9rem; /* Smaller font for mobile */
+    }
+
+    .swal2-popup .swal2-image {
+        width: 80%; /* Adjust image width for smaller screens */
+        height: auto; /* Maintain image aspect ratio */
+    }
+}
+
+@media (max-width: 480px) {
+    .responsive-swal-popup {
+        font-size: 0.8rem; /* Even smaller font for very small screens */
+    }
+
+    .swal2-popup .swal2-image {
+        width: 100%; /* Full-width image for small mobile devices */
+        height: auto;
+    }
+}
+
+
+
+/* Spinner Styles */
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

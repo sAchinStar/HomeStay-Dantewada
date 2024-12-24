@@ -6,7 +6,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import Swal from "sweetalert2";
 import { format, differenceInDays, eachDayOfInterval, isWithinInterval } from 'date-fns';
 
-const BookingForm = ({ onAddCustomer = () => {} }) => {
+const BookingForm = ({ onAddCustomer = () => { } }) => {
     const [customerName, setCustomerName] = useState('');
     const [customerEmail, setCustomerEmail] = useState('');
     const [mobileNumber, setMobileNumber] = useState('');
@@ -54,7 +54,7 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
 
     const checkRoomAvailability = (location, checkIn, checkOut, requestedRooms) => {
         const daysToCheck = eachDayOfInterval({ start: new Date(checkIn), end: new Date(checkOut) });
-        
+
         for (const day of daysToCheck) {
             const acceptedBookings = roomsData.filter((booking) => {
                 const bookingCheckIn = new Date(booking["Check In Time"]);
@@ -101,7 +101,7 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
 
     const checkAvailabilityAndSubmit = async (e) => {
         e.preventDefault();
-        
+
         setIsLoading(true);
 
         if (checkOutDate < checkInDate) {
@@ -133,7 +133,7 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
             checkInTime: format(checkInDate, 'dd/MM/yyyy'),
             checkOutTime: format(checkOutDate, 'dd/MM/yyyy'),
             fullName: customerName,
-            email:customerEmail,
+            email: customerEmail,
             moNo: mobileNumber,
             location: location,
             customerType: userType,
@@ -144,7 +144,7 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
 
         try {
             await fetch('https://script.google.com/macros/s/AKfycbwGm_Iza_lQGBcvwxLS5SxZ9YiFmH_ybPzzMqx4R1iHOumwig6jkkLJvJkFW1JppqOdpw/exec', {
-            //https://script.google.com/macros/s/AKfycbxEBL7mAh7-bfdR3S3GiJbuYtHcbAswiTFbhIgaqLKpFnXzif-htHgoZRJ8bD2tnD7c/exec
+                //https://script.google.com/macros/s/AKfycbxEBL7mAh7-bfdR3S3GiJbuYtHcbAswiTFbhIgaqLKpFnXzif-htHgoZRJ8bD2tnD7c/exec
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -187,95 +187,95 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
     background: `url(${bookform4})`,
     backgroundSize: "cover"}} /> */}
 
-<div className="add-booking-flex">
+            <div className="add-booking-flex">
                 <div className="image-container">
                     <img src="/bookform4.svg" alt="Room Booking" className="booking-image" />
                 </div>
-            <div className="book-room-form" style={{display:"flex", flexDirection: "column", justifyContent:"center",alignItems:"center", marginTop:"0px"}}>
-                <h2 className='add-booking-title'>Plan Your HomeStay With Us</h2>
-                <form className="add-booking-form" onSubmit={checkAvailabilityAndSubmit}>
-                    <table className="add-booking-table">
-                        <tbody>
-                            {/* Form fields here, similar to your original form */}
-                            <tr>
-                                <td><label htmlFor="customerName" className="add-booking-label">Full Name:</label></td>
-                                <td><input type="text" id="customerName" value={customerName} onChange={handleNameChange} minLength={3} required className="add-booking-input" style={{hover:"green"}} /></td>
-                            </tr>
-                            <tr>
-                                <td><label  className="add-booking-label">Email:</label></td>
-                                <td><input type="email" id="customerEmail" value={customerEmail} onChange={(e) => setCustomerEmail(e.target.value)}  required className="add-booking-input" style={{hover:"green"}} /></td>
-                            </tr>
-                            <tr>
-                                <td><label htmlFor="phoneNumber" className="add-booking-label">Phone Number:</label></td>
-                                <td><input type="tel" id="phoneNumber" value={mobileNumber} onChange={handlePhoneNumberChange} minLength={10} required className="add-booking-input" /></td>
-                            </tr>
-                            <tr>
-                                <td><label htmlFor="checkIn" className="add-booking-label">Check-In Date:</label></td>
-                                <td>
-                                    <DatePicker
-                                        selected={checkInDate}
-                                        onChange={(date) => setCheckInDate(date)}
-                                        dateFormat="dd/MM/yyyy"
-                                        className="add-booking-input"
-                                        required
-                                    />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><label htmlFor="checkOut" className="add-booking-label">Check-Out Date:</label></td>
-                                <td>
-                                    <DatePicker
-                                        selected={checkOutDate}
-                                        onChange={(date) => setCheckOutDate(date)}
-                                        dateFormat="dd/MM/yyyy"
-                                        className="add-booking-input"
-                                        required
-                                    />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><label className="add-booking-label">Number of Days:</label></td>
-                                <td><input type="number" value={numberOfDays} readOnly className="add-booking-input" /></td>
-                            </tr>
-                            <tr>
-                                <td><label className="add-booking-label">Number of Guests:</label></td>
-                                <td><input type="number" value={numberOfGuests} onChange={(e) => setNumberOfGuests(e.target.value)} required className="add-booking-input" min="1" /></td>
-                            </tr>
-                            {/* <tr>
+                <div className="book-room-form" style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", marginTop: "0px" }}>
+                    <h2 className='add-booking-title'>Plan Your HomeStay With Us</h2>
+                    <form className="add-booking-form" onSubmit={checkAvailabilityAndSubmit}>
+                        <table className="add-booking-table">
+                            <tbody>
+                                {/* Form fields here, similar to your original form */}
+                                <tr>
+                                    <td><label htmlFor="customerName" className="add-booking-label">Full Name:</label></td>
+                                    <td><input type="text" id="customerName" value={customerName} onChange={handleNameChange} minLength={3} required className="add-booking-input" style={{ hover: "green" }} /></td>
+                                </tr>
+                                <tr>
+                                    <td><label className="add-booking-label">Email:</label></td>
+                                    <td><input type="email" id="customerEmail" value={customerEmail} onChange={(e) => setCustomerEmail(e.target.value)} required className="add-booking-input" style={{ hover: "green" }} /></td>
+                                </tr>
+                                <tr>
+                                    <td><label htmlFor="phoneNumber" className="add-booking-label">Phone Number:</label></td>
+                                    <td><input type="tel" id="phoneNumber" value={mobileNumber} onChange={handlePhoneNumberChange} minLength={10} required className="add-booking-input" /></td>
+                                </tr>
+                                <tr>
+                                    <td><label htmlFor="checkIn" className="add-booking-label">Check-In Date:</label></td>
+                                    <td>
+                                        <DatePicker
+                                            selected={checkInDate}
+                                            onChange={(date) => setCheckInDate(date)}
+                                            dateFormat="dd/MM/yyyy"
+                                            className="add-booking-input"
+                                            required
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label htmlFor="checkOut" className="add-booking-label">Check-Out Date:</label></td>
+                                    <td>
+                                        <DatePicker
+                                            selected={checkOutDate}
+                                            onChange={(date) => setCheckOutDate(date)}
+                                            dateFormat="dd/MM/yyyy"
+                                            className="add-booking-input"
+                                            required
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label className="add-booking-label">Number of Days:</label></td>
+                                    <td><input type="number" value={numberOfDays} readOnly className="add-booking-input" /></td>
+                                </tr>
+                                <tr>
+                                    <td><label className="add-booking-label">Number of Guests:</label></td>
+                                    <td><input type="number" value={numberOfGuests} onChange={(e) => setNumberOfGuests(e.target.value)} required className="add-booking-input" min="1" /></td>
+                                </tr>
+                                {/* <tr>
                                 <td><label className="add-booking-label">Number of Rooms:</label></td>
                                 <td><input type="number" value={numberOfRooms} onChange={(e) => setNumberOfRooms(e.target.value)} required className="add-booking-input" min="1" /></td>
                             </tr> */}
-                            <tr>
-                                <td><label className="add-booking-label">Location:</label></td>
-                                <td>
-                                    <select value={location} onChange={(e) => setLocation(e.target.value)} className="add-booking-input">
-                                        <option value="Dantewada">Dantewada</option>
-                                        <option value="Kirandul">Kirandul</option>
-                                        <option value="Geedam">Geedam</option>
-                                        <option value="Barsur">Barsur</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><label className="add-booking-label">User Room Type:</label></td>
-                                <td>
-                                    <select value={userType} onChange={(e) => setUserType(e.target.value)} className="add-booking-input" style={{left:"50px"}} >
-                                        <option value="General">General</option>
-                                        <option value="Special">Special</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colSpan="2">
-                                    <button type="submit" disabled={isLoading} className="add-booking-submit-btn add-booking-button">
-                                        {isLoading ? 'Loading...' : 'Book Now'}
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </form>
-            </div>
+                                <tr>
+                                    <td><label className="add-booking-label">Location:</label></td>
+                                    <td>
+                                        <select value={location} onChange={(e) => setLocation(e.target.value)} className="add-booking-input">
+                                            <option value="Dantewada">Dantewada</option>
+                                            <option value="Kirandul">Kirandul</option>
+                                            <option value="Geedam">Geedam</option>
+                                            <option value="Barsur">Barsur</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label className="add-booking-label">User Room Type:</label></td>
+                                    <td>
+                                        <select value={userType} onChange={(e) => setUserType(e.target.value)} className="add-booking-input" style={{ left: "50px" }} >
+                                            <option value="General">General</option>
+                                            <option value="Special">Special</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="2">
+                                        <button type="submit" disabled={isLoading} className="add-booking-submit-btn add-booking-button">
+                                            {isLoading ? 'Loading...' : 'Book Now'}
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
             </div>
         </div>
     );
