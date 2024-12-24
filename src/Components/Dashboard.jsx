@@ -181,6 +181,10 @@ const Dashboard = () => {
             <h2 className="dashboard-heading">Hello Sir!</h2>
             {/* <h2 className="dashboard-heading">Today's Data!</h2> */}
           <h3> <span id="typed-element" className="comfort-comment"></span> </h3>
+
+          <div className="image-container">
+                    <img src="/admi_image.svg" alt="Room Booking" className="booking-image" />
+                </div>
             {/* <label htmlFor="location-select">Select Location:</label>
             <select 
                 id="location-select" 

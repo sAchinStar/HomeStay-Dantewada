@@ -41,9 +41,16 @@ const AllBooking = () => {
     }, []);
 
     const filterCustomers = (data, query, date, location) => {
-        const today = new Date().toLocaleDateString();
+
+        // const today = new Date().toLocaleDateString();
+const today =new Date();
+const formattedDate =new Intl.DateTimeFormat('en-GB',{
+    day:'2-digit',
+    month:'2-digit',
+    year:'numeric',
+}).format(today)
         let filtered = data;
-      console.log("this is new day:",today)
+    //   console.log("this is new day:",formattedDate)
         if (query) {
             const lowerCaseQuery = query.toLowerCase();
             filtered = filtered.filter(customer => 
@@ -68,8 +75,8 @@ const AllBooking = () => {
                 const checkInDate = customer["Check In Time"];
                 // const checkInDate = new Date(checkInTime).toLocaleDateString();
 
-                // console.log("this is a date",checkInDate)
-                return checkInDate === today;
+                console.log("this is a date",checkInDate)
+                return checkInDate === formattedDate;
             });
 
         }

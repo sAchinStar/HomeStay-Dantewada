@@ -1,7 +1,6 @@
 .sidebar-container {
   max-width: 20vw;
   height: 100vh;
-  
 }
 
 .hamburger {
@@ -24,6 +23,8 @@
   margin-left: 20px; /* Adds space between the icon and title */
   font-size: 21px;
   color: rgb(255, 255, 255);
+/* border-radius: 50px; */
+
 }
 
 /* Sidebar menu styling */

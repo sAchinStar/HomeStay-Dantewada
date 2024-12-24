@@ -10,6 +10,7 @@ import TodayBooking from "./Components/TodayBooking";
 import Footer from "./Components/Footer";
 import Admin from "./Components/Admin";
 import Login from "./Components/Login";
+import "./App.css"
 // import SidebarSocial from "./Components/SidebarSocial"
 const App = () => {
   return (
