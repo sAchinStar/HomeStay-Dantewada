@@ -40,7 +40,7 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
 
     const fetchRooms = async () => {
         try {
-            const res = await fetch("https://script.google.com/macros/s/AKfycbxEBL7mAh7-bfdR3S3GiJbuYtHcbAswiTFbhIgaqLKpFnXzif-htHgoZRJ8bD2tnD7c/exec");
+            const res = await fetch("https://script.google.com/macros/s/AKfycbwGm_Iza_lQGBcvwxLS5SxZ9YiFmH_ybPzzMqx4R1iHOumwig6jkkLJvJkFW1JppqOdpw/exec");
             const data = await res.json();
             if (data.rooms) {
                 setRoomsData(data.rooms);
@@ -143,7 +143,7 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
         };
 
         try {
-            await fetch('https://script.google.com/macros/s/AKfycbynkwVoQiZjYCsX4qzxvEEUA5ZsX4dGROUJNwLVyI4TFE41qcQe8C_Mj_FLQA1wcQdP/exec', {
+            await fetch('https://script.google.com/macros/s/AKfycbwGm_Iza_lQGBcvwxLS5SxZ9YiFmH_ybPzzMqx4R1iHOumwig6jkkLJvJkFW1JppqOdpw/exec', {
             //https://script.google.com/macros/s/AKfycbxEBL7mAh7-bfdR3S3GiJbuYtHcbAswiTFbhIgaqLKpFnXzif-htHgoZRJ8bD2tnD7c/exec
                 method: 'POST',
                 headers: {

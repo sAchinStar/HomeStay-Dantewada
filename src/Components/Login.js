@@ -114,7 +114,7 @@ const LoginForm = () => {
     setIsLoading(true);
     try {
       // Send a POST request to the Google Apps Script endpoint
-      const response = await fetch('https://script.google.com/macros/s/AKfycbxuR3R3Bg4W3AHcNvh6jgIo39RAUs0e3NSDN-xh1n0mta501lTKmaXViSz2FJRFDHus/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbzFDeFHR5Y1SNOdeVrizpI_42KnNBXrZMQ5fNfr9hVwRyXW2QltKbvdGJFbBARK8l8aQg/exec', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
