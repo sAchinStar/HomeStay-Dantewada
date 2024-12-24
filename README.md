@@ -39,6 +39,8 @@ HomestayWebsite/
 │   └── index.html
 ├── src/
 │   ├── components/
+│   │   ├── AddBooking.css
+│   │   ├── AddBooking.js
 │   │   ├── Header.js
 │   │   ├── Footer.js
 │   │   ├── RoomCard.js
