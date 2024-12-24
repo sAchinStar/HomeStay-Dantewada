@@ -199,11 +199,11 @@ const BookingForm = ({ onAddCustomer = () => {} }) => {
                             {/* Form fields here, similar to your original form */}
                             <tr>
                                 <td><label htmlFor="customerName" className="add-booking-label">Full Name:</label></td>
-                                <td><input type="text" id="customerName" value={customerName} onChange={handleNameChange} minLength={3} required className="add-booking-input" style={{hover:"blue"}} /></td>
+                                <td><input type="text" id="customerName" value={customerName} onChange={handleNameChange} minLength={3} required className="add-booking-input" style={{hover:"green"}} /></td>
                             </tr>
                             <tr>
                                 <td><label  className="add-booking-label">Email:</label></td>
-                                <td><input type="email" id="customerEmail" value={customerEmail} onChange={(e) => setCustomerEmail(e.target.value)}  required className="add-booking-input" style={{hover:"blue"}} /></td>
+                                <td><input type="email" id="customerEmail" value={customerEmail} onChange={(e) => setCustomerEmail(e.target.value)}  required className="add-booking-input" style={{hover:"green"}} /></td>
                             </tr>
                             <tr>
                                 <td><label htmlFor="phoneNumber" className="add-booking-label">Phone Number:</label></td>
