@@ -112,7 +112,7 @@ const HomePage = () => {
     </section>
 
 
-    <section className="container my-5">
+    <section className="feature_container my-5">
       {/* Featured Activities Section */}
       <h2 className="text-center mb-4">Featured Activities</h2>
       <div className="row">

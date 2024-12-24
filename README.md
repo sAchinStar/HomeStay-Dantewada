@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# Homestay Website Project Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
+This project involves the development of a Homestay Website using React.js, Bootstrap, CSS, and animations. The website aims to provide users with a seamless platform for browsing and booking homestays, ensuring a user-friendly experience through attractive design and interactive elements.
 
-## Available Scripts
+## Features
+### User-friendly Interface:
+- Clean and responsive design.
+- Easy navigation for browsing homestays.
 
-In the project directory, you can run:
+### Room Listings:
+- Display of room details such as images, price, availability, and location.
 
-### `npm start`
+### Booking System:
+- Option to book rooms with a streamlined checkout process.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Search Functionality:
+- Search bar for finding homestays by location, price, or amenities.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Animations:
+- Smooth animations to enhance user interaction, such as:
+  - Hover effects on cards.
+  - Loading animations for pages.
+  - Transition effects for modals and popups.
 
-### `npm test`
+### Responsive Design:
+- Fully optimized for mobile, tablet, and desktop devices.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
+- **React.js**: For building reusable components and managing the state of the application.
+- **Bootstrap**: For styling and responsive layout.
+- **CSS**: For custom styling and enhancing the visual appeal.
+- **Animations**: Implemented using CSS animations and libraries like Framer Motion or React Spring.
 
-### `npm run build`
+## Project Structure
+```
+HomestayWebsite/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── AddBooking.css
+│   │   ├── AddBooking.js
+│   │   ├── Header.js
+│   │   ├── Footer.js
+│   │   ├── RoomCard.js
+│   │   ├── BookingForm.js
+│   │   └── SearchBar.js
+│   ├── pages/
+│   │   ├── Home.js
+│   │   ├── About.js
+│   │   ├── Rooms.js
+│   │   └── Contact.js
+│   ├── App.js
+│   ├── index.js
+│   └── styles/
+│       ├── App.css
+│       └── Animations.css
+└── package.json
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Implementation Steps
+### Setup:
+- Initialize the React application using `create-react-app`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Design Layout:
+- Use Bootstrap components to design the layout.
+- Customize styles with CSS for a unique appearance.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Develop Components:
+- Create reusable components like `RoomCard`, `Header`, `Footer`, etc.
 
-### `npm run eject`
+### Add Animations:
+- Implement smooth hover effects using CSS.
+- Use Framer Motion for advanced animations like page transitions.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Responsive Design:
+- Test the website on different screen sizes to ensure responsiveness.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Testing:
+- Perform usability testing to ensure all features work as expected.

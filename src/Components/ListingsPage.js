@@ -28,8 +28,9 @@ const ListingsPage = () => {
   // }, []);
 
   return (
-    <div className="container d-flex justify-content-evenly flex-wrap">
+    <>
       <DetailsPage/>
+    <div className="container d-flex justify-content-evenly flex-wrap">
      
       <div className="one all">
       <Card picture={list1} title="Hotel Anurag" description= "Hotel Anurag, Chacha Chowk Kailash Nagar Dantewada, Dantewada HO, Dantewada - 494449 (Near Bus Stand)"/>   
@@ -96,6 +97,7 @@ const ListingsPage = () => {
       <Card picture={list12} title="Rsn Palace" description="Konta, Dantewada - 494114"/>
       </div>
     </div>
+    </>
   );
 };
 
