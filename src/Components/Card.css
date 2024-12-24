@@ -1,0 +1,17 @@
+/* .myCard{ */
+    /* animation-name: myCardAnimation; */
+    /* display: inline-block; */
+    /* overflow: hidden; Prevent the image from overflowing its container */
+    
+/* } */
+.myCard{
+     transition: transform 0.3s ease; /* Smooth zoom transition */
+     overflow: hidden;
+}
+
+  
+.myCard:hover {
+    transform: scale(1.1); /* Scale the element to 120% */
+    z-index: 1;
+  }
+  
