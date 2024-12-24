@@ -33,7 +33,7 @@ This project involves the development of a Homestay Website using React.js, Boot
 - **Animations**: Implemented using CSS animations and libraries like Framer Motion or React Spring.
 
 ## Project Structure
-
+```
 HomestayWebsite/
 ├── public/
 │   └── index.html
@@ -55,7 +55,7 @@ HomestayWebsite/
 │       ├── App.css
 │       └── Animations.css
 └── package.json
-
+```
 
 ## Implementation Steps
 ### Setup:
