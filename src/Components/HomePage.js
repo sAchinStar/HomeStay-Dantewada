@@ -43,10 +43,12 @@ const HomePage = () => {
   <div>
     <header className="container text-center">
     {/* <h3> <span id="typed-element" className="comfort-comment" style={{ whiteSpace: 'pre-line' }}></span> </h3> */}
+    <div>
     <h1 className="my-3"><span id="typed-welcome"></span> </h1>
     <p style={{ fontSize: '20px', marginTop: '10px' }}>
     <span id="typed-discover" >  </span>
     </p>
+    </div>
     </header>
       <ImageSlider />
     <section className="my-5">
