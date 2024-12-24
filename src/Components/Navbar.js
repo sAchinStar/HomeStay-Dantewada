@@ -5,7 +5,7 @@ import logo from"../Assets/logo.png"
 
 function Navbar() {
     return (
-        <nav className="navbar navbar-expand-lg bg-body-secondary">
+        <nav className="navbar navbar-expand-lg bg-body-secondary myNavstyle">
             <div className="container-fluid">
                 {/* <Link className="navbar-brand" to="/"> */}
                 <img src={logo} alt="logo" className="nav_logo" />
