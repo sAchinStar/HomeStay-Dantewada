@@ -72,7 +72,7 @@ const AddBooking = ({ onAddCustomer = () => {} }) => {
         };
 
         try {
-            await fetch('https://script.google.com/macros/s/AKfycbzAES6vIe7PRtls0bQfLxBclgoekMfxPEJpyl6yac1t3W9lIg-BapBvojd_HDEd35pR/exec', {
+            await fetch('https://script.google.com/macros/s/AKfycbwGm_Iza_lQGBcvwxLS5SxZ9YiFmH_ybPzzMqx4R1iHOumwig6jkkLJvJkFW1JppqOdpw/exec', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
