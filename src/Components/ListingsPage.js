@@ -30,7 +30,7 @@ const ListingsPage = () => {
   return (
     <>
       <DetailsPage />
-      <div className="container d-flex justify-content-evenly flex-wrap">
+      <div className="container d-flex justify-content-evenly flex-wrap overflow-y-auto ">
 
         <Card className="one all" picture={list1} title="Hotel Anurag" description="Hotel Anurag, Chacha Chowk Kailash Nagar Dantewada, Dantewada HO, Dantewada - 494449 (Near Bus Stand)" />
         <Card className="two all" picture={list2} title="Hotel Sunrise" description="Hotel Sunrise, Kailash Nagar Road, Ward 14, Katekalyan, Dantewada - 494449 (Behind Old Circuit House, Near Vishal Traders)" />
