@@ -10,14 +10,13 @@ const DetailsPage = ({ id, title, description, picture }) => {
     if (modalInstance) {
       modalInstance.hide(); // Dismiss the modal
     }
-  
+
     // Scroll to the top
     window.scrollTo(0, 0);
-  
+
     // Navigate to the book page
     navigation('/book');
   };
-  
 
   return (
     <>
@@ -37,12 +36,15 @@ const DetailsPage = ({ id, title, description, picture }) => {
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body text-center">
+              {/* Responsive Image */}
               <img
-                style={{ width: "38rem", height: "18rem" }}
+                className="img-fluid mx-auto d-block"
+                style={{ maxWidth: "100%", height: "auto" }}
                 src={picture}
                 alt="No cover"
               />
               <p>Description: {description}</p>
+              <p>Contact: 91+ 9999999999</p>
               <p>Price Rs 1000/-</p>
             </div>
             <div className="modal-footer d-flex justify-content-center">
