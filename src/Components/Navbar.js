@@ -54,12 +54,12 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/status-page">
+              <Link className="nav-link" to="/status">
                 Status
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/login-page">
+              <Link className="nav-link" to="/login">
                 Admin
               </Link>
             </li>

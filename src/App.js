@@ -29,12 +29,12 @@ const App = () => {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/bookingfrom" element={<BookingForm />} />
           <Route path="/todaybooking" element={<TodayBooking />} />
-          <Route path="login-page" element={<Login />} />
+          <Route path="login" element={<Login />} />
           
           <Route element={<ProtectRouter />}>
-          <Route path="/adminpage" element={<Admin />} />
+          <Route path="/admin" element={<Admin />} />
           </Route>
-          <Route path="/status-page" element={<Status />} />
+          <Route path="/status" element={<Status />} />
         </Routes>
         <Footer />
       </Router>
