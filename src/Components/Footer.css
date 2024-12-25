@@ -1,4 +1,4 @@
-.footer {
+/* .footer {
     background-color: #2a2b2c;
     padding: 20px;
     display: flex;
@@ -50,7 +50,6 @@
   }
   
   .logos img {
-    /* height: 80px; */
     height: 50px;
     margin: 0 10px;
   }
@@ -88,5 +87,120 @@
     .logos img {
         height: 30px;
     }
+  }
+   */
+
+   .footer {
+    background-color: #2a2b2c;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+  }
+  
+  .footer-left {
+    color: white;
+    text-align: left;
+    width: 45%; 
+  }
+  
+  .footer-right {
+    text-align: left; 
+    width: 45%; 
+  }
+  
+  .hr-line {
+    width: 100%;
+    border: none;
+    border-top: 1px solid whitesmoke;
+    margin: 20px 0; 
+  }
+  
+  .footer-center {
+    color: white;
+    width: 100%; 
+    text-align: center;
+  }
+  
+  .ownership p {
+    color: whitesmoke;
+    margin: 5px 0;
+  }
+  
+  .ownership a {
+    color: #00aaff;
+    text-decoration: none;
+  }
+  
+  .logos img {
+    height: 50px;
+    margin: 0 10px;
+  }
+  
+  /*  */
+  .footer-right {
+    margin-top: 10px;
+  }
+  
+  .footer-right p {
+    color: whitesmoke;
+  }
+  .footer-right a {
+    color: #00aaff;
+    margin: 0 10px;
+    font-size: 24px;
+  }
+  
+  .footer-right a:hover {
+    color: #007bb5;
+  }
+  /*  */
+  
+  .ad-details {
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+  }
+  
+  .ad-details li {
+    margin-bottom: 5px; 
+    color: whitesmoke; 
+  }
+  
+  
+  @media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+    }
+  
+    .footer-left, .footer-right {
+        width: 100%; 
+        text-align: center; 
+    }
+  
+    .logos img {
+        height: 30px;
+    }
+  }
+  
+  
+  .footer-center {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: nowrap; 
+    gap: 20px; 
+    color: white;
+    width: 100%; 
+    text-align: center; 
+  }
+  
+  .ownership p, .logos img, .social-icons {
+    margin: 0; 
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px; 
   }
   
