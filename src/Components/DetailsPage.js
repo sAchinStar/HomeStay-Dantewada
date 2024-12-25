@@ -38,8 +38,8 @@ const DetailsPage = ({ id, title, description, picture }) => {
             <div className="modal-body text-center">
               {/* Responsive Image */}
               <img
-                className="img-fluid mx-auto d-block"
-                style={{ maxWidth: "100%", height: "auto" }}
+                className="img-fluid  d-block"
+                style={{ width: "100%", height: "auto" }}
                 src={picture}
                 alt="No cover"
               />
