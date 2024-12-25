@@ -12,6 +12,7 @@ import Admin from "./Components/Admin";
 import Login from "./Components/Login";
 import "./App.css"
 import Status from "./Components/Status";
+import ProtectRouter from "./Components/ProtectRouter";
 // import SidebarSocial from "./Components/SidebarSocial"
 const App = () => {
   return (
@@ -28,8 +29,11 @@ const App = () => {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/bookingfrom" element={<BookingForm />} />
           <Route path="/todaybooking" element={<TodayBooking />} />
-          <Route path="/adminpage" element={<Admin />} />
           <Route path="login-page" element={<Login />} />
+          
+          <Route element={<ProtectRouter />}>
+          <Route path="/adminpage" element={<Admin />} />
+          </Route>
           <Route path="/status-page" element={<Status />} />
         </Routes>
         <Footer />
