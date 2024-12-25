@@ -30,6 +30,7 @@ const App = () => {
           <Route path="/bookingfrom" element={<BookingForm />} />
           <Route path="/todaybooking" element={<TodayBooking />} />
           <Route path="login-page" element={<Login />} />
+          
           <Route element={<ProtectRouter />}>
           <Route path="/adminpage" element={<Admin />} />
           </Route>
